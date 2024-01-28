@@ -12,7 +12,7 @@ import ARKit
 struct Leaderboared: View {
     var body: some View {
         ZStack{
-            ARViewContainer()
+            ARViewRepresentable()
             
             //.navigationBarHidden(true)
             

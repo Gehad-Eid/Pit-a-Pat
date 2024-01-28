@@ -12,6 +12,8 @@ import ARKit
 class Controller: UIViewController {
     @IBOutlet var arView : ARView!
     
+//    var numberOfAnchors = 5
+    
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         
@@ -24,7 +26,7 @@ class Controller: UIViewController {
         arView.addGestureRecognizer(tapGestureRecognizer)
         
     }
-    
+     
     func setUpARView() {
         arView.automaticallyConfigureSession = false
         
@@ -37,8 +39,18 @@ class Controller: UIViewController {
     
     // plan B tap gesture ,,, but here ll be the hole generatoer ig
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
-        let anchor = ARAnchor(name: "Ball", transform: arView!.cameraTransform.matrix)
-        arView.session.add (anchor: anchor)
+                let anchor = ARAnchor(name: "Ball", transform: arView!.cameraTransform.matrix)
+                arView.session.add (anchor: anchor)
+        
+        // Generate anchors on a horizontal plane with equal spacing and distance > 0.5 meters
+//        let spacing: Float = 0.5
+//        for i in 0..<numberOfAnchors {
+////            let translation = SIMD3<Float>(Float(i) * spacing, 0, -1.5) // Adjust the distance as needed
+////            let transform = simd_float4x4(translation)
+//            let anchor = ARAnchor(transform: arView!.cameraTransform.matrix)
+//            arView.session.add(anchor: anchor)
+//        }
+        
     }
     
     func placeObject (named entityName: String, for anchor: ARAnchor) {

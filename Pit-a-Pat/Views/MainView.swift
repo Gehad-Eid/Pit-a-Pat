@@ -5,7 +5,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                ARViewContainer()
+                ARViewRepresentable()
                 
                 VStack {
                     NavigationLink(destination: ConnectWithSomeone()) {

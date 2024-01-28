@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B87B893A2B66C3E00031E9D9 /* customARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89392B66C3E00031E9D9 /* customARView.swift */; };
+		B87B893C2B66CAB70031E9D9 /* Hole.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B893B2B66CAB70031E9D9 /* Hole.reality */; };
+		B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B893D2B66D6AE0031E9D9 /* Actions.swift */; };
+		B87B89422B66E0B30031E9D9 /* Ball.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B89412B66E0B30031E9D9 /* Ball.reality */; };
+		B87B89442B66E1860031E9D9 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89432B66E1860031E9D9 /* Manager.swift */; };
 		B8A8BA4B2B65A4AC00633A08 /* ConnectWithSomeone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4A2B65A4AC00633A08 /* ConnectWithSomeone.swift */; };
 		B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */; };
 		B8A8BA512B664B3000633A08 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA502B664B3000633A08 /* Controller.swift */; };
-		B8A8BA532B664B4800633A08 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA522B664B4800633A08 /* View.swift */; };
+		B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */; };
 		B8BFBDA82B62448D00161CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */; };
 		B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFBDA92B62448D00161CF6 /* MainView.swift */; };
 		B8BFBDAC2B62448E00161CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BFBDAB2B62448E00161CF6 /* Assets.xcassets */; };
@@ -18,10 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B87B89392B66C3E00031E9D9 /* customARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customARView.swift; sourceTree = "<group>"; };
+		B87B893B2B66CAB70031E9D9 /* Hole.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole.reality; sourceTree = "<group>"; };
+		B87B893D2B66D6AE0031E9D9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		B87B89412B66E0B30031E9D9 /* Ball.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball.reality; sourceTree = "<group>"; };
+		B87B89432B66E1860031E9D9 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		B8A8BA4A2B65A4AC00633A08 /* ConnectWithSomeone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithSomeone.swift; sourceTree = "<group>"; };
 		B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboared.swift; sourceTree = "<group>"; };
 		B8A8BA502B664B3000633A08 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		B8A8BA522B664B4800633A08 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
 		B8BFBDA42B62448D00161CF6 /* Pit-a-Pat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pit-a-Pat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8BFBDA92B62448D00161CF6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -61,7 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				B8A8BA502B664B3000633A08 /* Controller.swift */,
-				B8A8BA522B664B4800633A08 /* View.swift */,
+				B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */,
+				B87B89392B66C3E00031E9D9 /* customARView.swift */,
+				B87B893D2B66D6AE0031E9D9 /* Actions.swift */,
+				B87B89432B66E1860031E9D9 /* Manager.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -85,6 +98,8 @@
 		B8BFBDA62B62448D00161CF6 /* Pit-a-Pat */ = {
 			isa = PBXGroup;
 			children = (
+				B87B89412B66E0B30031E9D9 /* Ball.reality */,
+				B87B893B2B66CAB70031E9D9 /* Hole.reality */,
 				B8A8BA4F2B664B1B00633A08 /* AR */,
 				B8A8BA482B65A40600633A08 /* Servcies  */,
 				B8A8BA472B65A3F300633A08 /* Views */,
@@ -161,8 +176,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87B893C2B66CAB70031E9D9 /* Hole.reality in Resources */,
 				B8BFBDAF2B62448E00161CF6 /* Preview Assets.xcassets in Resources */,
 				B8BFBDAC2B62448E00161CF6 /* Assets.xcassets in Resources */,
+				B87B89422B66E0B30031E9D9 /* Ball.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,11 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87B893A2B66C3E00031E9D9 /* customARView.swift in Sources */,
+				B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */,
 				B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */,
 				B8A8BA4B2B65A4AC00633A08 /* ConnectWithSomeone.swift in Sources */,
-				B8A8BA532B664B4800633A08 /* View.swift in Sources */,
+				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
 				B8BFBDA82B62448D00161CF6 /* AppDelegate.swift in Sources */,
 				B8A8BA512B664B3000633A08 /* Controller.swift in Sources */,
+				B87B89442B66E1860031E9D9 /* Manager.swift in Sources */,
 				B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +335,7 @@
 				DEVELOPMENT_TEAM = N5C4229YSA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -346,7 +366,7 @@
 				DEVELOPMENT_TEAM = N5C4229YSA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;

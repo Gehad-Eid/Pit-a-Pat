@@ -10,7 +10,7 @@ import SwiftUI
 struct ConnectWithSomeone: View {
     var body: some View {
         ZStack{
-            ARViewContainer()
+            ARViewRepresentable()
             
             // نحط بدالها ايميج او ثري دي عادي ماهو بالاي ار
             Rectangle()
