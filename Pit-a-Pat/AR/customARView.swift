@@ -5,8 +5,9 @@ import ARKit
 import RealityKit
 import Combine
 
-class customARView : ARView {
+class CustomARView : ARView {
     required init(frame frameRect: CGRect) {
+        shouldAddBlurredRectangle = false
         super.init(frame: frameRect)
     }
     
@@ -14,9 +15,19 @@ class customARView : ARView {
         fatalError("init?(coder decoder: NSCoder) isn't implemented")
     }
     
-    convenience init(){
+    var shouldAddBlurredRectangle: Bool
+    
+    convenience init(shouldAddBlurredRectangle: Bool = false){
         self.init(frame: UIScreen.main.bounds)
-//        setUpARView()
+        self.shouldAddBlurredRectangle = shouldAddBlurredRectangle
+        
+        //setUpARView()
+        
+//         add a blurred rectangle if the parameter is true
+        if shouldAddBlurredRectangle {
+            addBlurredRectangle()
+        }
+        
         boxadd()
     }
     
@@ -67,5 +78,17 @@ class customARView : ARView {
     
     func throwBalls() {
         
+    }
+    
+    // Function to add a blurred rectangle
+    func addBlurredRectangle() {
+        let blurredRectangle = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+        blurredRectangle.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(blurredRectangle)
+        
+        blurredRectangle.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        blurredRectangle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        blurredRectangle.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        blurredRectangle.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }

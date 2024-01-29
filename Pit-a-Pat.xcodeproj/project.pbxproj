@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		5AFB8B5E2B6785530099B033 /* AuthenticationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB8B5D2B6785530099B033 /* AuthenticationServices.swift */; };
 		5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */; };
-		B87B893A2B66C3E00031E9D9 /* customARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89392B66C3E00031E9D9 /* customARView.swift */; };
+		B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89392B66C3E00031E9D9 /* CustomARView.swift */; };
 		B87B893C2B66CAB70031E9D9 /* Hole.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B893B2B66CAB70031E9D9 /* Hole.reality */; };
 		B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B893D2B66D6AE0031E9D9 /* Actions.swift */; };
 		B87B89422B66E0B30031E9D9 /* Ball.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B89412B66E0B30031E9D9 /* Ball.reality */; };
 		B87B89442B66E1860031E9D9 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89432B66E1860031E9D9 /* Manager.swift */; };
-		B8A8BA4B2B65A4AC00633A08 /* ConnectWithSomeone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4A2B65A4AC00633A08 /* ConnectWithSomeone.swift */; };
+		B87B89462B67B30D0031E9D9 /* ConnectWithSomeone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */; };
+		B8A8BA4B2B65A4AC00633A08 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */; };
 		B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */; };
 		B8A8BA512B664B3000633A08 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA502B664B3000633A08 /* Controller.swift */; };
 		B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */; };
@@ -25,15 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5AFB8B5C2B6784690099B033 /* Pit-a-Pat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pit-a-Pat.entitlements"; sourceTree = "<group>"; };
 		5AFB8B5D2B6785530099B033 /* AuthenticationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationServices.swift; sourceTree = "<group>"; };
 		5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		B87B89392B66C3E00031E9D9 /* customARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customARView.swift; sourceTree = "<group>"; };
+		B87B89392B66C3E00031E9D9 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		B87B893B2B66CAB70031E9D9 /* Hole.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole.reality; sourceTree = "<group>"; };
 		B87B893D2B66D6AE0031E9D9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		B87B89412B66E0B30031E9D9 /* Ball.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball.reality; sourceTree = "<group>"; };
 		B87B89432B66E1860031E9D9 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		B8A8BA4A2B65A4AC00633A08 /* ConnectWithSomeone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithSomeone.swift; sourceTree = "<group>"; };
+		B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithSomeone.swift; sourceTree = "<group>"; };
+		B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboared.swift; sourceTree = "<group>"; };
 		B8A8BA502B664B3000633A08 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
@@ -60,9 +61,9 @@
 			children = (
 				5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */,
 				B8BFBDA92B62448D00161CF6 /* MainView.swift */,
-				B8A8BA4A2B65A4AC00633A08 /* ConnectWithSomeone.swift */,
+				B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */,
 				B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */,
-				5AFB8B5D2B6785530099B033 /* AuthenticationServices.swift */,
+				B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -70,6 +71,7 @@
 		B8A8BA482B65A40600633A08 /* Servcies  */ = {
 			isa = PBXGroup;
 			children = (
+				5AFB8B5D2B6785530099B033 /* AuthenticationServices.swift */,
 			);
 			path = "Servcies ";
 			sourceTree = "<group>";
@@ -79,7 +81,7 @@
 			children = (
 				B8A8BA502B664B3000633A08 /* Controller.swift */,
 				B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */,
-				B87B89392B66C3E00031E9D9 /* customARView.swift */,
+				B87B89392B66C3E00031E9D9 /* CustomARView.swift */,
 				B87B893D2B66D6AE0031E9D9 /* Actions.swift */,
 				B87B89432B66E1860031E9D9 /* Manager.swift */,
 			);
@@ -105,15 +107,14 @@
 		B8BFBDA62B62448D00161CF6 /* Pit-a-Pat */ = {
 			isa = PBXGroup;
 			children = (
-				5AFB8B5C2B6784690099B033 /* Pit-a-Pat.entitlements */,
 				B87B89412B66E0B30031E9D9 /* Ball.reality */,
 				B87B893B2B66CAB70031E9D9 /* Hole.reality */,
-				B8A8BA4F2B664B1B00633A08 /* AR */,
-				B8A8BA482B65A40600633A08 /* Servcies  */,
-				B8A8BA472B65A3F300633A08 /* Views */,
 				B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */,
 				B8BFBDAB2B62448E00161CF6 /* Assets.xcassets */,
+				B8A8BA4F2B664B1B00633A08 /* AR */,
 				B8BFBDAD2B62448E00161CF6 /* Preview Content */,
+				B8A8BA482B65A40600633A08 /* Servcies  */,
+				B8A8BA472B65A3F300633A08 /* Views */,
 			);
 			path = "Pit-a-Pat";
 			sourceTree = "<group>";
@@ -198,13 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B87B893A2B66C3E00031E9D9 /* customARView.swift in Sources */,
+				B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */,
 				B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */,
 				B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */,
-				B8A8BA4B2B65A4AC00633A08 /* ConnectWithSomeone.swift in Sources */,
+				B8A8BA4B2B65A4AC00633A08 /* InstructionView.swift in Sources */,
 				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
 				5AFB8B5E2B6785530099B033 /* AuthenticationServices.swift in Sources */,
 				5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */,
+				B87B89462B67B30D0031E9D9 /* ConnectWithSomeone.swift in Sources */,
 				B8BFBDA82B62448D00161CF6 /* AppDelegate.swift in Sources */,
 				B8A8BA512B664B3000633A08 /* Controller.swift in Sources */,
 				B87B89442B66E1860031E9D9 /* Manager.swift in Sources */,
@@ -343,7 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pit-a-Pat/Preview Content\"";
-				DEVELOPMENT_TEAM = 25ANLCX5P6;
+				DEVELOPMENT_TEAM = N5C4229YSA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
@@ -358,7 +360,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "none.Pit-a-Pat0";
+				PRODUCT_BUNDLE_IDENTIFIER = "none.Pit-a-Pat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -375,7 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pit-a-Pat/Preview Content\"";
-				DEVELOPMENT_TEAM = 25ANLCX5P6;
+				DEVELOPMENT_TEAM = N5C4229YSA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
@@ -390,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "none.Pit-a-Pat0";
+				PRODUCT_BUNDLE_IDENTIFIER = "none.Pit-a-Pat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

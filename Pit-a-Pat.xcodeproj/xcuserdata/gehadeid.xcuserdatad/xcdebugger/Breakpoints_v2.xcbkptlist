@@ -14,42 +14,10 @@
             filePath = "Pit-a-Pat/AR/customARView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "setUpARView()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CE3CC579-8BED-437B-BAE0-5219AB77D1EB - c33dec3e6147a353"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pit_a_Pat.customARView.setUpARView() -&gt; ()"
-                  moduleName = "Pit-a-Pat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gehadeid/Desktop/Pit-a-Pat/Pit-a-Pat/AR/customARView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "CE3CC579-8BED-437B-BAE0-5219AB77D1EB - c33dec3e6147a353"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pit_a_Pat.customARView.setUpARView() -&gt; ()"
-                  moduleName = "Pit-a-Pat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gehadeid/Desktop/Pit-a-Pat/Pit-a-Pat/AR/customARView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
