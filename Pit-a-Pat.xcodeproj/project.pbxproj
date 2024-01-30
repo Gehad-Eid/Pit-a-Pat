@@ -15,6 +15,9 @@
 		B87B89422B66E0B30031E9D9 /* Ball.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B89412B66E0B30031E9D9 /* Ball.reality */; };
 		B87B89442B66E1860031E9D9 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89432B66E1860031E9D9 /* Manager.swift */; };
 		B87B89462B67B30D0031E9D9 /* ConnectWithSomeone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */; };
+		B87B89482B6842470031E9D9 /* container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89472B6842470031E9D9 /* container.swift */; };
+		B87B894A2B68D29B0031E9D9 /* HostAGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89492B68D29B0031E9D9 /* HostAGame.swift */; };
+		B87B894C2B68D2E00031E9D9 /* JoinAGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B894B2B68D2E00031E9D9 /* JoinAGame.swift */; };
 		B8A8BA4B2B65A4AC00633A08 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */; };
 		B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */; };
 		B8A8BA512B664B3000633A08 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA502B664B3000633A08 /* Controller.swift */; };
@@ -34,6 +37,9 @@
 		B87B89412B66E0B30031E9D9 /* Ball.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball.reality; sourceTree = "<group>"; };
 		B87B89432B66E1860031E9D9 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithSomeone.swift; sourceTree = "<group>"; };
+		B87B89472B6842470031E9D9 /* container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = container.swift; sourceTree = "<group>"; };
+		B87B89492B68D29B0031E9D9 /* HostAGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostAGame.swift; sourceTree = "<group>"; };
+		B87B894B2B68D2E00031E9D9 /* JoinAGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAGame.swift; sourceTree = "<group>"; };
 		B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboared.swift; sourceTree = "<group>"; };
 		B8A8BA502B664B3000633A08 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
@@ -56,14 +62,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B87B894D2B68D3020031E9D9 /* The Game */ = {
+			isa = PBXGroup;
+			children = (
+				B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */,
+				B87B89492B68D29B0031E9D9 /* HostAGame.swift */,
+				B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */,
+				B87B894B2B68D2E00031E9D9 /* JoinAGame.swift */,
+				B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */,
+			);
+			path = "The Game";
+			sourceTree = "<group>";
+		};
+		B87B894E2B68D3E70031E9D9 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				B87B89392B66C3E00031E9D9 /* CustomARView.swift */,
+				B87B893D2B66D6AE0031E9D9 /* Actions.swift */,
+				B87B89432B66E1860031E9D9 /* Manager.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		B8A8BA472B65A3F300633A08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B87B894D2B68D3020031E9D9 /* The Game */,
 				5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */,
 				B8BFBDA92B62448D00161CF6 /* MainView.swift */,
-				B8A8BA4A2B65A4AC00633A08 /* InstructionView.swift */,
-				B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */,
-				B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */,
+				B87B89472B6842470031E9D9 /* container.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -79,11 +106,9 @@
 		B8A8BA4F2B664B1B00633A08 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				B87B894E2B68D3E70031E9D9 /* Functions */,
 				B8A8BA502B664B3000633A08 /* Controller.swift */,
 				B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */,
-				B87B89392B66C3E00031E9D9 /* CustomARView.swift */,
-				B87B893D2B66D6AE0031E9D9 /* Actions.swift */,
-				B87B89432B66E1860031E9D9 /* Manager.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -206,11 +231,14 @@
 				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
 				5AFB8B5E2B6785530099B033 /* AuthenticationServices.swift in Sources */,
 				5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */,
+				B87B894C2B68D2E00031E9D9 /* JoinAGame.swift in Sources */,
+				B87B894A2B68D29B0031E9D9 /* HostAGame.swift in Sources */,
 				B87B89462B67B30D0031E9D9 /* ConnectWithSomeone.swift in Sources */,
 				B8BFBDA82B62448D00161CF6 /* AppDelegate.swift in Sources */,
 				B8A8BA512B664B3000633A08 /* Controller.swift in Sources */,
 				B87B89442B66E1860031E9D9 /* Manager.swift in Sources */,
 				B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */,
+				B87B89482B6842470031E9D9 /* container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

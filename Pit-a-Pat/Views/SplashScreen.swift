@@ -29,9 +29,10 @@ import SwiftUI
                         }
                 } else {
                     if isActive {
-                        NavigationView {
+                        NavigationStack {
                             MainView()
                         }
+                        .navigationViewStyle(StackNavigationViewStyle())
                     }
                 }
             }

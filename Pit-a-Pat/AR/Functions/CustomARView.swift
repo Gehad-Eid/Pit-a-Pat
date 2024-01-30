@@ -21,14 +21,19 @@ class CustomARView : ARView {
         self.init(frame: UIScreen.main.bounds)
         self.shouldAddBlurredRectangle = shouldAddBlurredRectangle
         
-        //setUpARView()
+        setUpARView()
+        
         
 //         add a blurred rectangle if the parameter is true
         if shouldAddBlurredRectangle {
             addBlurredRectangle()
         }
         
-        boxadd()
+        subscribeToARStream()
+        
+//        boxadd()
+//        generateHoles(difficulty: 5)
+        
     }
     
     // Configuration
@@ -42,7 +47,7 @@ class CustomARView : ARView {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    func subscribeToActionStream() {
+    func subscribeToARStream() {
         Manager.shared
             .ARStream
             .sink { [weak self] action in
@@ -73,7 +78,36 @@ class CustomARView : ARView {
     }
     
     func generateHoles(difficulty: Int) {
+        // Clear existing anchors
+        scene.anchors.removeAll()
         
+        // Create anchors with the specified spacing
+        for _ in 0..<difficulty {
+            
+            let xPosition = Float.random(in: -1.5/2...1.5/2)
+            let zPosition = Float.random(in: -1.5/2...1.5/2)
+//            let yPosition = Float.random(in: -1.5/2...0/2)
+            
+            var anchorTransform = matrix_identity_float4x4
+            anchorTransform.columns.3.x = xPosition
+            anchorTransform.columns.3.z = zPosition
+//            anchorTransform.columns.3.y = yPosition   //Set the y position relative to the camera
+
+            let arAnchor = ARAnchor(transform: cameraTransform.matrix)
+            let anchor = AnchorEntity(world: anchorTransform)
+            
+            //            let xPosition = Float(i) * 0.6
+            //            var anchorTransform = matrix_identity_float4x4
+            //            anchorTransform.columns.3.x = xPosition
+            
+            //            let anchor = AnchorEntity(world: anchorTransform)
+            let hole = try! ModelEntity.load(named: "Hole")
+//            let ball = try? Entity.load(named: "Ball")
+            
+            anchor.addChild(hole)
+//            anchor.addChild(ball!)
+            scene.addAnchor(anchor)
+        }
     }
     
     func throwBalls() {

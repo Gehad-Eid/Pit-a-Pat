@@ -1,15 +1,21 @@
+//
+//  container.swift
+//  Pit-a-Pat
+//
+//  Created by Gehad Eid on 29/01/2024.
+//
+
 import SwiftUI
 import AuthenticationServices
 
-
-struct MainView: View {
+struct container: View {
     var body: some View {
-        NavigationStack {
-            //ZStack{
-            ARViewRepresentable(blurred: true)
-//            Rectangle()
-                .edgesIgnoringSafeArea(.all)
-                .overlay(
+        
+        //ZStack{
+        ARViewRepresentable(blurred: true)
+            .edgesIgnoringSafeArea(.all)
+            .overlay(
+                NavigationStack {
                     VStack {
                         Image("PitAPat")
                             .resizable()
@@ -17,25 +23,13 @@ struct MainView: View {
                             .frame(width: 200, height: 200)
                             .clipped()
                         
-                        NavigationLink(destination: HostAGame()) {
+                        NavigationLink(destination: InstructionView()) {
                             Rectangle()
                                 .foregroundColor(Color("Color1"))
                                 .cornerRadius(12)
                                 .frame(width: 280, height: 44)
                                 .overlay(
-                                    Text("Host a game")
-                                        .foregroundColor(.white)
-                                        .font(.headline)
-                                )
-                        }
-                        
-                        NavigationLink(destination: JoinAGame()) {
-                            Rectangle()
-                                .foregroundColor(Color("Color1"))
-                                .cornerRadius(12)
-                                .frame(width: 280, height: 44)
-                                .overlay(
-                                    Text("Join a game")
+                                    Text("Play")
                                         .foregroundColor(.white)
                                         .font(.headline)
                                 )
@@ -66,19 +60,16 @@ struct MainView: View {
                         .cornerRadius(12)
                         .padding()
                     }
-                )
-            //.blur(radius: 10)
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .edgesIgnoringSafeArea(.all)
-        
-
+                    
+                    //.blur(radius: 10)
+                }
+                    .navigationViewStyle(StackNavigationViewStyle())
+                    .edgesIgnoringSafeArea(.all)
+            )
     }
 }
-//}
 
 
 #Preview {
-    MainView()
+    container()
 }
-
