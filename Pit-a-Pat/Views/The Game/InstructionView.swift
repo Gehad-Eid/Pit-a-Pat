@@ -1,114 +1,100 @@
-//
-//  ConnectWithSomeone.swift
-//  Pit-a-Pat
-//
-//  Created by Gehad Eid on 27/01/2024.
-//
-
 import SwiftUI
 
 struct InstructionView: View {
-    @State private var selectedTab = 0
-    
+    @ObservedObject var countdownViewModel = CountdownViewModel()
+
+    @State private var showCounter = false
+    @State private var showInstruction1 = true
+    @State private var showInstruction2 = false
+    @State private var showStartButton = false
+
     var body: some View {
-        NavigationView {
-            //ZStack{
+        GeometryReader { geometry in
             ARViewRepresentable()
                 .edgesIgnoringSafeArea(.all)
-                .overlay(
-                    TabView(selection: $selectedTab) {
-                        // Replace these with instructions for the game and how to play .. when finished it will connect with some one in ConnectWithSomeone view
-                        
-                        // TRASH CODE
-                        Rectangle()
-                            .fill(.blue)
-                            .frame(width: 200,height: 150)
+                .background(Color.clear)
+                
+            if showInstruction1 {
+                Spacer()
+                    .frame(maxWidth: .infinity)
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 9)
+
+                Rectangle()
+                    .foregroundColor(Color("Color2"))
+                    .frame(width: 335, height: 72)
+                    .cornerRadius(8)
+                    .overlay(
+                        Text("Pay attention to the pattern of colors")
+                            .font(.custom("Ithra-Bold", size: 18))
                             .padding()
-                            .overlay(
-                                VStack{
-                                    Text("تعليمات اللعبة و بعدها يضغط زر عشان يكمل للتعليمة اللي بعدها")
-                                    // 1. host or join ?
-                                    
-                                    // Host:
-                                    // 1. set the phone on the meddel of the playing zone and press start
-                                    // 2. connect with someone who's joining
-                                    // 3. press start
-                                    
-                                    //Join:
-                                    // 1. go to the host and peer with them
-                                    
-                                    Button{
-                                        Manager.shared.ARStream.send(.removeAll)
-                                    } label: {
-                                        Image (systemName: "trash")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 40, height: 40)
-                                            .padding()
-                                            .background (.regularMaterial)
-                                            .cornerRadius (16)
-                                    }
-                                    
-                                    
-                                }
-                            )
-                            .tag(0)
-                        
-                        
-                        Rectangle()
-                            .fill(.orange)
-                            .frame(width: 200,height: 150)
-                            .padding()
-                            .overlay(
-                                Button{
-                                    Manager.shared.ARStream.send(.generateHoles(difficulty: 5))
-                                } label: {
-                                    Image (systemName: "star")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 40, height: 40)
-                                        .padding()
-                                        .background (.regularMaterial)
-                                        .cornerRadius (16)
-                                }
-                            )
-                            .tag(1)
-                        
-                        
-                        
-                        Rectangle()
-                            .fill(.red)
-                            .frame(width: 200,height: 150)
-                            .padding()
-                            .overlay(
-                                NavigationLink(destination: ConnectWithSomeone().navigationBarBackButtonHidden(true)) {
-                                    Button{
-                                        Manager.shared.ARStream.send(.generateHoles(difficulty: 5))
-                                    } label: {
-                                        Image (systemName: "pin")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 40, height: 40)
-                                            .padding()
-                                            .background (.regularMaterial)
-                                            .cornerRadius (16)
-                                    }
-                                }
-                                
-                            )
-                            .tag(2)
+                            .multilineTextAlignment(.center)
+                    )
+                    .foregroundColor(.black)
+                    .onTapGesture {
+                        Manager.shared.ARStream.send(.removeAll)
+                        showInstruction1 = false
+                        showInstruction2 = true
                     }
-                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-                        .background(Color.clear)
-                        .frame(maxWidth: .infinity, maxHeight: 150)
-                )
-            //}
-            //.navigationBarHidden(true)
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 9)
+            } else if showInstruction2 {
+                Rectangle()
+                    .foregroundColor(Color("Color2"))
+                    .frame(width: 335, height: 72)
+                    .cornerRadius(8)
+                    .overlay(
+                        Text("Pat the balls according to the colors pattern")
+                            .font(.custom("Ithra-Bold", size: 18))
+                            .padding()
+                            .foregroundColor(.black)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.center)
+                    )
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        showInstruction2 = false
+                        showStartButton = true
+                    }
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 9)
+            } else if showStartButton {
+                Button(action: {
+                    Manager.shared.ARStream.send(.generateHoles(difficulty: 5))
+                    showStartButton = false
+                    showCounter = true
+                    countdownViewModel.startCountdown()
+                }) {
+                    Rectangle()
+                        .foregroundColor(Color("Color2"))
+                        .frame(width: 335, height: 72)
+                        .cornerRadius(8)
+                        .overlay(
+                            Text("Set the phone in the middle of the playing zone and press to start")
+                                .font(.custom("Ithra-Bold", size: 18))
+                                .padding()
+                                .foregroundColor(.black)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .multilineTextAlignment(.center)
+                        )
+                }
+                .frame(maxWidth: .infinity)
+                .position(x: geometry.size.width / 2, y: geometry.size.height / 9)
+            } else if showCounter {
+                VStack {
+                    Text("\(countdownViewModel.counter)")
+                        .font(.system(size: 90, weight: .bold))
+                        .padding()
+                        .foregroundColor(.black)
+                }
+                .frame(maxWidth: .infinity)
+                .position(x: geometry.size.width / 2, y: geometry.size.height / 9)
+            }
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
-#Preview {
-    InstructionView()
+#if DEBUG
+struct InstructionView_Previews: PreviewProvider {
+    static var previews: some View {
+        InstructionView()
+    }
 }
+#endif
