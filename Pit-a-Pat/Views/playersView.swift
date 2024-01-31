@@ -8,58 +8,71 @@
 
 import SwiftUI
 import CloudKit
-struct playersView: View {
+    struct PlayersView: View {
 
-@StateObject var viewModel = ViewModel()
+        @StateObject var viewModel = ViewModel()
 
-    var body: some View {
-        NavigationStack{
-            List{
-                ForEach(viewModel.players) { player  in
-                    HStack(spacing: 2){
-                        
-                        
-                        Image("avatar\(Int.random(in: 1..<7))")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 64, height: 64)
-                            .clipShape(Circle())
-                            .padding(.vertical)
-                            .padding(.horizontal, 2)
+        var body: some View {
+            ZStack {
+                ARViewRepresentable(blurred: true)
+                    .edgesIgnoringSafeArea(.all)
+            
+//                Circle()
+//                    .trim(from: 0, to: 0.5)
+//                    .foregroundColor(Color("Color1"))
+//                    .frame(width: 850 , height: 400)
+//                    .offset(y: -490)
+//                
+                
+                
+                Rectangle()
+                    .foregroundColor(Color.white.opacity(0.7))
+                    .frame(width: 353, height: 583)
+                    .cornerRadius(10)
+                    .overlay(
+                        ScrollView {
+                            VStack {
+                                ForEach(viewModel.players) { player in
+                                    Rectangle()
+                                        .foregroundColor(Color.white)
+                                        .frame(width: 338, height: 83)
+                                        .cornerRadius(12)
+                                        .overlay(
+                                            HStack {
+                                                Image("avatar\(Int.random(in: 1..<7))")
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 64, height: 64)
+                                                    .clipShape(Circle())
+                                                    .padding(.vertical)
+                                                    .padding(.horizontal, 2)
 
-                        VStack(alignment: .leading, spacing:6){
-                            Text("\(player.Name)")
-                                .font(.title3)
-                                .fontWeight(.semibold)
+                                                Text("\(player.Name)")
+                                                    .font(.title3)
+                                                    .fontWeight(.semibold)
 
-                            Text("\(player.score)")
-                           
+                                                Spacer()
 
+                                                Text("⭐️    \(player.score)")
+                                            }
+                                            .frame(maxWidth: .infinity, alignment: .trailing)
+                                            .padding(8)
+                                        )
+                                }
+                            } .padding(.top, 20)
                         }
-                        .padding(8)
-                    }
-                }
+                    )
+                    .cornerRadius(10)
             }
-            .listStyle(.plain)
-            .onAppear{
+            .onAppear {
                 viewModel.fetchLearners()
             }
-            .navigationTitle("Players")
         }
     }
 
-
-
-}
-
-#Preview {
-    playersView()
-}
-
-
-
-
-
-
-
+    struct PlayersView_Previews: PreviewProvider {
+        static var previews: some View {
+            PlayersView()
+        }
+    }
 

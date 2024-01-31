@@ -67,7 +67,7 @@ struct ProfileView: View {
                 //                    }
                 //                }
                 
-                NavigationLink(destination:playersView()) {
+                NavigationLink(destination:PlayersView()) {
                                   Image(systemName: "photo")
                                       .resizable()
                                       .aspectRatio(contentMode: .fit)
