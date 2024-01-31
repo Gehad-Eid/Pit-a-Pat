@@ -64,7 +64,7 @@ struct InstructionView: View {
                     .position(x: geometry.size.width / 2, y: geometry.size.height / 9)
             } else if showStartButton {
                 Button(action: {
-                    Manager.shared.ARStream.send(.generateHoles(difficulty: 5))
+                    Manager.shared.ARStream.send(.addHoles)
                     showStartButton = false
                     showCounter = true
                     countdownViewModel.startCountdown()
