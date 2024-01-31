@@ -232,7 +232,6 @@
 				B81CFF992B6A201000EFFEF6 /* Ball2.reality in Resources */,
 				B81CFF9B2B6A232A00EFFEF6 /* Ball0.reality in Resources */,
 				B81CFF982B6A201000EFFEF6 /* Ball3.reality in Resources */,
-				B87B89422B66E0B30031E9D9 /* Ball.reality in Resources */,
 				5A9520DE2B693FA70015C1D8 /* tick3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pit-a-Pat/Preview Content\"";
-				DEVELOPMENT_TEAM = 25ANLCX5P6;
+				DEVELOPMENT_TEAM = N5C4229YSA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
@@ -426,7 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pit-a-Pat/Preview Content\"";
-				DEVELOPMENT_TEAM = 25ANLCX5P6;
+				DEVELOPMENT_TEAM = N5C4229YSA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";

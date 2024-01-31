@@ -17,7 +17,7 @@ struct MainView: View {
                             .frame(width: 200, height: 200)
                             .clipped()
                         
-                        NavigationLink(destination: HostAGame()) {
+                        NavigationLink(destination: InstructionView()) {
                             Rectangle()
                                 .foregroundColor(Color("Color1"))
                                 .cornerRadius(12)
