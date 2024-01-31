@@ -4,8 +4,8 @@
 import SwiftUI
 
 enum Actions{
-    case generateHoles(difficulty: Int)
-    case throwBalls
+    case addHoles
+    case throwBalls //(difficulty: Int)
     case removeAll
     
 }

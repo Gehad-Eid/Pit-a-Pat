@@ -21,18 +21,19 @@ class CustomARView : ARView {
         self.init(frame: UIScreen.main.bounds)
         self.shouldAddBlurredRectangle = shouldAddBlurredRectangle
         
+        // Set the configuration
         setUpARView()
         
         
-//         add a blurred rectangle if the parameter is true
+        
+        //add a blurred rectangle if the parameter is true
         if shouldAddBlurredRectangle {
             addBlurredRectangle()
         }
         
-        subscribeToARStream()
-        
 //        boxadd()
-//        generateHoles(difficulty: 5)
+        
+        subscribeToARStream()
         
     }
     
@@ -52,8 +53,8 @@ class CustomARView : ARView {
             .ARStream
             .sink { [weak self] action in
                 switch action {
-                case .generateHoles(let difficulty):
-                    self?.generateHoles(difficulty: difficulty)
+                case .addHoles: //.addHoles(let difficulty):
+                    self?.addHoles()
                     
                 case .throwBalls:
                     self?.throwBalls()
@@ -65,54 +66,84 @@ class CustomARView : ARView {
             .store(in: &cancellables)
     }
     
-    func boxadd() {
+    func addHoles() {
         let hole = try? Entity.load(named: "Hole")
-        let ball = try? Entity.load(named: "Ball")
+//        let ball = try? Entity.load(named: "Ball")
         
         let anchor = AnchorEntity(plane: .horizontal)
         
         anchor.addChild(hole!)
-        anchor.addChild(ball!)
+//        anchor.addChild(ball!)
         
         scene.addAnchor(anchor)
     }
     
-    func generateHoles(difficulty: Int) {
-        // Clear existing anchors
-        scene.anchors.removeAll()
+//    func generateHoles(difficulty: Int) {
+//        // Clear existing anchors
+//        scene.anchors.removeAll()
+//        
+//        // Create anchors with the specified spacing
+//        for _ in 0..<difficulty {
+//            
+//            let xPosition = Float.random(in: -1.5/2...1.5/2)
+//            let zPosition = Float.random(in: -1.5/2...1.5/2)
+////            let yPosition = Float.random(in: -1.5/2...0/2)
+//            
+//            var anchorTransform = matrix_identity_float4x4
+//            anchorTransform.columns.3.x = xPosition
+//            anchorTransform.columns.3.z = zPosition
+//
+//           // let arAnchor = ARAnchor(transform: cameraTransform.matrix)
+//            
+//            let anchor = AnchorEntity(world: anchorTransform)
+//            
+//            //            let xPosition = Float(i) * 0.6
+//            //            var anchorTransform = matrix_identity_float4x4
+//            //            anchorTransform.columns.3.x = xPosition
+//            
+//            //            let anchor = AnchorEntity(world: anchorTransform)
+//            
+//            let hole = try! ModelEntity.load(named: "Hole")
+////            let ball = try? Entity.load(named: "Ball")
+//            
+//            anchor.addChild(hole)
+////            anchor.addChild(ball!)
+//            
+//            scene.addAnchor(anchor)
+//        }
+//    }
+    
+    func throwBalls() {
+        // Create an array of entity names
+        let entityNames = ["Ball0", "Ball1", "Ball2", "Ball3"]
         
-        // Create anchors with the specified spacing
-        for _ in 0..<difficulty {
+        // Shuffle the array to randomize entity selection
+        var shuffledEntityNames = entityNames.shuffled()
+        
+        let anchors = scene.anchors.compactMap { $0 as? AnchorEntity }
+        
+        let BallEntity = try? Entity.load(named: shuffledEntityNames.first ?? "")
+        
+        for anchor in anchors {
+            // Select a random ball
+            let randomBallEntityName = shuffledEntityNames.randomElement()
+            let randomBallEntity = try? Entity.load(named: randomBallEntityName ?? "")
             
-            let xPosition = Float.random(in: -1.5/2...1.5/2)
-            let zPosition = Float.random(in: -1.5/2...1.5/2)
-//            let yPosition = Float.random(in: -1.5/2...0/2)
-            
-            var anchorTransform = matrix_identity_float4x4
-            anchorTransform.columns.3.x = xPosition
-            anchorTransform.columns.3.z = zPosition
-//            anchorTransform.columns.3.y = yPosition   //Set the y position relative to the camera
-
-            let arAnchor = ARAnchor(transform: cameraTransform.matrix)
-            let anchor = AnchorEntity(world: anchorTransform)
-            
-            //            let xPosition = Float(i) * 0.6
-            //            var anchorTransform = matrix_identity_float4x4
-            //            anchorTransform.columns.3.x = xPosition
-            
-            //            let anchor = AnchorEntity(world: anchorTransform)
-            let hole = try! ModelEntity.load(named: "Hole")
-//            let ball = try? Entity.load(named: "Ball")
-            
-            anchor.addChild(hole)
-//            anchor.addChild(ball!)
-            scene.addAnchor(anchor)
+            // Check if the ball is in the scene or not
+            if (randomBallEntity == BallEntity) {
+                
+                // Add 2 balls of the same color to the scene
+                anchor.addChild(randomBallEntity!)
+                anchor.addChild(randomBallEntity!)
+                
+                // Remove the ball from the array
+                shuffledEntityNames.removeFirst()
+            }else{
+                anchor.addChild(randomBallEntity!)
+            }
         }
     }
     
-    func throwBalls() {
-        
-    }
     
     // Function to add a blurred rectangle
     func addBlurredRectangle() {
