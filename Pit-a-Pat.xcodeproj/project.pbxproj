@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A9520DC2B693F7B0015C1D8 /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9520DB2B693F7B0015C1D8 /* CountdownViewModel.swift */; };
+		5A9520DE2B693FA70015C1D8 /* tick3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A9520DD2B693FA70015C1D8 /* tick3.mp3 */; };
 		5AFB8B5E2B6785530099B033 /* AuthenticationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB8B5D2B6785530099B033 /* AuthenticationServices.swift */; };
 		5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */; };
 		B81CFF972B6A201000EFFEF6 /* Ball1.reality in Resources */ = {isa = PBXBuildFile; fileRef = B81CFF942B6A201000EFFEF6 /* Ball1.reality */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A9520DB2B693F7B0015C1D8 /* CountdownViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
+		5A9520DD2B693FA70015C1D8 /* tick3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick3.mp3; sourceTree = "<group>"; };
 		5AFB8B5D2B6785530099B033 /* AuthenticationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationServices.swift; sourceTree = "<group>"; };
 		5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		B81CFF942B6A201000EFFEF6 /* Ball1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball1.reality; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */,
 				B8BFBDA92B62448D00161CF6 /* MainView.swift */,
 				B87B89472B6842470031E9D9 /* container.swift */,
+				5A9520DB2B693F7B0015C1D8 /* CountdownViewModel.swift */,
+				5A9520DD2B693FA70015C1D8 /* tick3.mp3 */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 				B81CFF992B6A201000EFFEF6 /* Ball2.reality in Resources */,
 				B81CFF9B2B6A232A00EFFEF6 /* Ball0.reality in Resources */,
 				B81CFF982B6A201000EFFEF6 /* Ball3.reality in Resources */,
+				B87B89422B66E0B30031E9D9 /* Ball.reality in Resources */,
+				5A9520DE2B693FA70015C1D8 /* tick3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9520DC2B693F7B0015C1D8 /* CountdownViewModel.swift in Sources */,
 				B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */,
 				B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */,
 				B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */,
@@ -385,7 +394,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pit-a-Pat/Preview Content\"";
-				DEVELOPMENT_TEAM = N5C4229YSA;
+				DEVELOPMENT_TEAM = 25ANLCX5P6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
@@ -417,7 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pit-a-Pat/Preview Content\"";
-				DEVELOPMENT_TEAM = N5C4229YSA;
+				DEVELOPMENT_TEAM = 25ANLCX5P6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
