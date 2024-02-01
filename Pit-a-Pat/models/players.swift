@@ -7,14 +7,12 @@ struct Player : Identifiable{
     let Name : String
     let score : Int
     
+    
 
     
-    init(record:CKRecord){
-        self.id        = record.recordID
+    init(record: CKRecord ) {
+        self.id = record.recordID
         self.Name = record["Name"] as? String ?? "N/A"
         self.score = record["score"] as? Int ?? 0
-  
-
     }
-    
 }

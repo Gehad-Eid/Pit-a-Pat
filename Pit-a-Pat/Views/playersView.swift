@@ -1,78 +1,85 @@
-//
-//  playersView.swift
-//  Pit-a-Pat
-//
-//  Created by Faizah Almalki on 19/07/1445 AH.
-//
-
-
 import SwiftUI
 import CloudKit
-    struct PlayersView: View {
 
-        @StateObject var viewModel = ViewModel()
+struct PlayersView: View {
+    @StateObject var viewModel = ViewModel()
+    @Environment(\.presentationMode) var presentationMode
 
-        var body: some View {
+    var body: some View {
+        NavigationView {
             ZStack {
                 ARViewRepresentable(blurred: true)
                     .edgesIgnoringSafeArea(.all)
-            
-//                Circle()
-//                    .trim(from: 0, to: 0.5)
-//                    .foregroundColor(Color("Color1"))
-//                    .frame(width: 850 , height: 400)
-//                    .offset(y: -490)
-//                
-                
-                
-                Rectangle()
-                    .foregroundColor(Color.white.opacity(0.7))
-                    .frame(width: 353, height: 583)
-                    .cornerRadius(10)
-                    .overlay(
-                        ScrollView {
-                            VStack {
-                                ForEach(viewModel.players) { player in
-                                    Rectangle()
-                                        .foregroundColor(Color.white)
-                                        .frame(width: 338, height: 83)
-                                        .cornerRadius(12)
-                                        .overlay(
-                                            HStack {
-                                                Image("avatar\(Int.random(in: 1..<7))")
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: 64, height: 64)
-                                                    .clipShape(Circle())
-                                                    .padding(.vertical)
-                                                    .padding(.horizontal, 2)
 
-                                                Text("\(player.Name)")
-                                                    .font(.title3)
-                                                    .fontWeight(.semibold)
+                Image("Subtract")
+                    .offset(y: -370)
 
-                                                Spacer()
+                Text("Leaderboard")
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(Color.white)
+                    .offset(y: -340)
 
-                                                Text("⭐️    \(player.score)")
-                                            }
-                                            .frame(maxWidth: .infinity, alignment: .trailing)
-                                            .padding(8)
-                                        )
+                VStack {
+                    Rectangle()
+                        .foregroundColor(Color.white.opacity(0.7))
+                        .frame(width: 353, height: 583)
+                        .cornerRadius(10)
+                        .overlay(
+                            ScrollView {
+                                VStack {
+                                    ForEach(viewModel.players) { player in
+                                        Rectangle()
+                                            .foregroundColor(Color.white)
+                                            .frame(width: 338, height: 83)
+                                            .cornerRadius(12)
+                                            .overlay(
+                                                HStack {
+                                                    Image("avatar\(Int.random(in: 1..<7))")
+                                                        .resizable()
+                                                        .scaledToFill()
+                                                        .frame(width: 64, height: 64)
+                                                        .clipShape(Circle())
+                                                        .padding(.vertical)
+                                                        .padding(.horizontal, 2)
+
+                                                    Text("\(player.Name)")
+                                                        .font(.title3)
+                                                        .fontWeight(.semibold)
+
+                                                    Spacer()
+
+                                                    Text("⭐️    \(player.score)")
+                                                }
+                                                .frame(maxWidth: .infinity, alignment: .trailing)
+                                                .padding(8)
+                                            )
+                                    }
                                 }
-                            } .padding(.top, 20)
-                        }
-                    )
-                    .cornerRadius(10)
+                                .padding(.top, 20)
+                            }
+                        )
+                        .cornerRadius(10)
+                        .padding(.bottom, -70)
+                }
             }
+                                               
             .onAppear {
                 viewModel.fetchLearners()
             }
-        }
-    }
+        
+    }     .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                               Button(action: {
+                                   withAnimation {
+                                       presentationMode.wrappedValue.dismiss()
+                                   }
+                               }) {
+                                   Image(systemName: "chevron.backward")
+                                       .foregroundColor(.white)
 
-    struct PlayersView_Previews: PreviewProvider {
-        static var previews: some View {
-            PlayersView()
-        }
-    }
-
+                                 
+                                   
+                               }
+                           )
+             }
+}
