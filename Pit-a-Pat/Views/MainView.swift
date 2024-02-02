@@ -23,6 +23,7 @@ struct MainView: View {
                             .clipShape(Circle())
                             .padding(.vertical)
                             .padding(.horizontal, 2)
+                        
                     }
                 } .padding(EdgeInsets(top: -200 , leading: 230 , bottom: 0, trailing: 0))
                 Image("PitAPat")
@@ -76,6 +77,7 @@ struct MainView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
     }
 }

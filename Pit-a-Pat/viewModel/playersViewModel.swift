@@ -1,28 +1,18 @@
-
-//  playersViewModel.swift
-//  Pit-a-Pat
-//
-//  Created by Faizah Almalki on 19/07/1445 AH.
-//
-
-
 import Foundation
-
 import CloudKit
 
-class ViewModel: ObservableObject{
-    @Published var players : [Player] = []
-    let container = CKContainer(identifier: "iCloud.Pit-a-Pat2")//Change it to your container id
-    //1
-    func fetchLearners(){
+class ViewModel: ObservableObject {
+    @Published var players: [Player] = []
+    let container = CKContainer(identifier: "iCloud.Pit-a-Pat2")
+
+    func fetchLearners() {
         let predicate = NSPredicate(value: true)
-        //Record Type depends on what you have named it
-        let query = CKQuery(recordType:"Profile", predicate: predicate)
-        
+        let query = CKQuery(recordType: "Profile", predicate: predicate)
+
         let operation = CKQueryOperation(query: query)
         operation.recordMatchedBlock = { recordId, result in
             DispatchQueue.main.async {
-                switch result{
+                switch result {
                 case .success(let record):
                     let player = Player(record: record)
                     self.players.append(player)
@@ -31,26 +21,25 @@ class ViewModel: ObservableObject{
                 }
             }
         }
-        
+
         container.publicCloudDatabase.add(operation)
     }
-    
-    
-    func addLearner(){
+
+    func addLearner() {
         let record = CKRecord(recordType: "Player")
         record["Name"] = "Reema"
         record["Score"] = 0
         record["level"] = 1
 
-        
-       
         container.publicCloudDatabase.save(record) { record, error in
-            guard  error  == nil else{
+            guard error == nil else {
                 print(error?.localizedDescription ?? "an unknown error occurred")
                 return
             }
         }
     }
-    
-    
+
+    func sortPlayersByScore() {
+        players.sort { $0.score > $1.score }
+    }
 }

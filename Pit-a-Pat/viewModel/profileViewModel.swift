@@ -20,7 +20,6 @@ class ProfileViewModel: ObservableObject{
     @Published var score: Int = 0
     @Published var level: Int = 1
     @Published var selectedImage: PhotosPickerItem? = nil
-    @Published var avatarImage: Image = Image(.defaultAvatar)
     
 
     //Get user record

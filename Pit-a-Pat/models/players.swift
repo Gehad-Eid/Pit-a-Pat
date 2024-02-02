@@ -7,7 +7,6 @@ struct Player : Identifiable{
     let Name : String
     let score : Int
     
-    
 
     
     init(record: CKRecord ) {

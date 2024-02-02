@@ -27,13 +27,20 @@ struct PlayersView: View {
                         .overlay(
                             ScrollView {
                                 VStack {
-                                    ForEach(viewModel.players) { player in
+                                    ForEach(0..<viewModel.players.count, id: \.self) { index in
+                                        let player = viewModel.players[index]
+                                        let rank = index + 1
+
                                         Rectangle()
                                             .foregroundColor(Color.white)
                                             .frame(width: 338, height: 83)
                                             .cornerRadius(12)
                                             .overlay(
                                                 HStack {
+                                                    Text("\(rank)")
+                                                        .font(.system(size: 30, weight: .semibold))
+                                                         .foregroundColor(rank <= 3 ? Color("Color1") : Color.black)
+                                                    
                                                     Image("avatar\(Int.random(in: 1..<7))")
                                                         .resizable()
                                                         .scaledToFill()
@@ -48,7 +55,10 @@ struct PlayersView: View {
 
                                                     Spacer()
 
-                                                    Text("⭐️    \(player.score)")
+                                                    Text("⭐️ \(player.score)")
+                                                        .font(.title3)
+                                                        .fontWeight(.semibold)
+                                                    
                                                 }
                                                 .frame(maxWidth: .infinity, alignment: .trailing)
                                                 .padding(8)
@@ -62,12 +72,12 @@ struct PlayersView: View {
                         .padding(.bottom, -70)
                 }
             }
-                                               
             .onAppear {
                 viewModel.fetchLearners()
+                viewModel.sortPlayersByScore()
             }
-        
-    }     .navigationBarBackButtonHidden(true)
+      
+        }             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                                Button(action: {
                                    withAnimation {
@@ -76,10 +86,10 @@ struct PlayersView: View {
                                }) {
                                    Image(systemName: "chevron.backward")
                                        .foregroundColor(.white)
+                             
+                               
+                           }
+        )
 
-                                 
-                                   
-                               }
-                           )
-             }
+    }
 }
