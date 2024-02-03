@@ -14,7 +14,8 @@ struct Leaderboared: View {
     let scores = [150, 120, 200, 180, 90, 300, 250, 190, 220, 170, 130, 240, 160, 280, 210]
     var body: some View {
         ZStack{
-            ARViewRepresentable(blurred: true)
+            //SharedARView(blurred: true) ARViewRepresentable
+            Rectangle()
                 .edgesIgnoringSafeArea(.all)
 //                .blur(radius: 10)
            VStack {

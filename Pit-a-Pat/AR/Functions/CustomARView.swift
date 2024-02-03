@@ -1,4 +1,4 @@
-//  Created by Gehad Eid on 28/01/2024.
+//  Created by Gehad Eid and Abrar Ghandurah  (best colap ever) on 28/01/2024.
 
 import SwiftUI
 import ARKit
@@ -6,6 +6,8 @@ import RealityKit
 import Combine
 
 class CustomARView : ARView {
+    //    static let sharedAR = CustomARView()
+    
     required init(frame frameRect: CGRect) {
         shouldAddBlurredRectangle = false
         super.init(frame: frameRect)
@@ -17,6 +19,7 @@ class CustomARView : ARView {
     
     var shouldAddBlurredRectangle: Bool
     
+    //    private
     convenience init(shouldAddBlurredRectangle: Bool = false){
         self.init(frame: UIScreen.main.bounds)
         self.shouldAddBlurredRectangle = shouldAddBlurredRectangle
@@ -24,18 +27,132 @@ class CustomARView : ARView {
         // Set the configuration
         setUpARView()
         
-        
-        
         //add a blurred rectangle if the parameter is true
         if shouldAddBlurredRectangle {
             addBlurredRectangle()
         }
         
-//        boxadd()
-        
         subscribeToARStream()
+
+        startSceneUpdate()
         
     }
+    
+    // Property to store the trigger volume
+    var triggerVolume = TriggerVolume(shape: .generateBox(size: [0.2,0.2,0.2]), filter: .sensor)
+    
+    // Function to create and update anchors
+    func updateAnchors() {
+        // Remove the anchor from the previous frame
+        triggerVolume.removeFromParent()
+        
+        // Create a new anchor at the camera's position
+        let cameraTransform = self.cameraTransform
+
+        let newTriggerVolume =  TriggerVolume(shape: .generateBox(size: [0.2,0.2,0.2]), filter: CollisionFilter(group: CollisionGroup(rawValue: 2), mask: CollisionGroup(rawValue: 1)))
+        newTriggerVolume.transform = cameraTransform
+        newTriggerVolume.name = "triggerVolume"
+        
+        // Add the new anchor to the scene
+        scene.anchors.append(newTriggerVolume)
+        
+        // Save the reference to the current anchor
+        triggerVolume = newTriggerVolume
+    }
+    
+    var count = 0
+    
+    var collisionSubscriptions = [Cancellable]()
+    func addCollisionListening(onEntity entity: Entity & HasCollision) {
+        collisionSubscriptions.append(self.scene.subscribe(to: CollisionEvents.Began.self, on: entity) { event in
+            
+            self.count += 1
+            //Place code here for when the collision begins.
+            print(event.entityA.name, "collided with", event.entityB.name)
+            print(self.count)
+            self.scene.anchors.removeAll()
+        })
+        collisionSubscriptions.append(self.scene.subscribe(to: CollisionEvents.Ended.self, on: entity) { event in
+            print(event.entityA.name, "stoped colliding with", event.entityB.name)
+            //Place code here for when the collision ends.
+        })
+    }
+    
+    
+    // Subscribe to scene updates
+    private var sceneUpdateCancellable: Cancellable?
+    
+    // Function to start subscribing to scene updates
+    func startSceneUpdate() {
+        sceneUpdateCancellable = scene.subscribe(to: SceneEvents.Update.self) { [weak self] _ in
+            self?.updateAnchors()
+        }
+    }
+    
+    // Function to stop subscribing to scene updates
+    func stopSceneUpdate() {
+        sceneUpdateCancellable?.cancel()
+        sceneUpdateCancellable = nil
+    }
+    
+    
+    // Array of entity names
+    let entityNames = ["Ball0", "Ball1", "Ball2", "Ball3"]
+    
+    // BallEntity property
+    var BallEntity = try? Entity.load(named: "Ball0")
+    
+    
+    //  Function to throw balls
+    func throwBalls() {
+        // Shuffle the array to randomize entity selection
+        var shuffledEntityNames = entityNames.shuffled()
+        print(shuffledEntityNames)
+        
+        let anchors = scene.anchors.compactMap { $0 as? AnchorEntity }
+        
+        let name = shuffledEntityNames.first
+        print(name!)
+        
+        // Attempt to load the BallEntity
+        BallEntity = try? Entity.load(named: name ?? "Ball0")
+        BallEntity?.name = name!
+        
+        BallEntity?.components[CollisionComponent.self] = CollisionComponent(
+            shapes: [.generateBox(size: [0.2,0.2,0.2])],
+            mode: .trigger,
+            filter: CollisionFilter(group: CollisionGroup(rawValue: 1), mask: CollisionGroup(rawValue: 2))
+        )
+        
+        addCollisionListening(onEntity: BallEntity! as Entity & HasCollision)
+        
+        print("did load \(BallEntity!)")
+        
+        
+        var didAddBall = false
+        
+        for anchor in anchors {
+            // Select a random ball
+            let randomBallEntityName = shuffledEntityNames.randomElement()
+            let randomBallEntity = try? Entity.load(named: randomBallEntityName ?? "")
+            
+            // Add 2 balls of the same color to the scene
+            if !didAddBall {
+                
+                anchor.addChild(BallEntity!)
+                didAddBall = true
+                print("sameBallcount = \(didAddBall)")
+                
+                // Remove the ball from the array
+                shuffledEntityNames.removeFirst()
+                print("did add 2 ")
+            } else {
+                anchor.addChild(randomBallEntity!)
+                print("did add 1")
+            }
+        }
+    }
+    
     
     // Configuration
     func setUpARView() {
@@ -68,80 +185,13 @@ class CustomARView : ARView {
     
     func addHoles() {
         let hole = try? Entity.load(named: "Hole")
-//        let ball = try? Entity.load(named: "Ball")
+        hole?.name = "Hole"
         
         let anchor = AnchorEntity(plane: .horizontal)
         
         anchor.addChild(hole!)
-//        anchor.addChild(ball!)
         
         scene.addAnchor(anchor)
-    }
-    
-//    func generateHoles(difficulty: Int) {
-//        // Clear existing anchors
-//        scene.anchors.removeAll()
-//        
-//        // Create anchors with the specified spacing
-//        for _ in 0..<difficulty {
-//            
-//            let xPosition = Float.random(in: -1.5/2...1.5/2)
-//            let zPosition = Float.random(in: -1.5/2...1.5/2)
-////            let yPosition = Float.random(in: -1.5/2...0/2)
-//            
-//            var anchorTransform = matrix_identity_float4x4
-//            anchorTransform.columns.3.x = xPosition
-//            anchorTransform.columns.3.z = zPosition
-//
-//           // let arAnchor = ARAnchor(transform: cameraTransform.matrix)
-//            
-//            let anchor = AnchorEntity(world: anchorTransform)
-//            
-//            //            let xPosition = Float(i) * 0.6
-//            //            var anchorTransform = matrix_identity_float4x4
-//            //            anchorTransform.columns.3.x = xPosition
-//            
-//            //            let anchor = AnchorEntity(world: anchorTransform)
-//            
-//            let hole = try! ModelEntity.load(named: "Hole")
-////            let ball = try? Entity.load(named: "Ball")
-//            
-//            anchor.addChild(hole)
-////            anchor.addChild(ball!)
-//            
-//            scene.addAnchor(anchor)
-//        }
-//    }
-    
-    func throwBalls() {
-        // Create an array of entity names
-        let entityNames = ["Ball0", "Ball1", "Ball2", "Ball3"]
-        
-        // Shuffle the array to randomize entity selection
-        var shuffledEntityNames = entityNames.shuffled()
-        
-        let anchors = scene.anchors.compactMap { $0 as? AnchorEntity }
-        
-        let BallEntity = try? Entity.load(named: shuffledEntityNames.first ?? "")
-        
-        for anchor in anchors {
-            // Select a random ball
-            let randomBallEntityName = shuffledEntityNames.randomElement()
-            let randomBallEntity = try? Entity.load(named: randomBallEntityName ?? "")
-            
-            // Check if the ball is in the scene or not
-            if (randomBallEntity == BallEntity) {
-                
-                // Add 2 balls of the same color to the scene
-                anchor.addChild(randomBallEntity!)
-                anchor.addChild(randomBallEntity!)
-                
-                // Remove the ball from the array
-                shuffledEntityNames.removeFirst()
-            }else{
-                anchor.addChild(randomBallEntity!)
-            }
-        }
     }
     
     
@@ -157,3 +207,6 @@ class CustomARView : ARView {
         blurredRectangle.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
+
+extension TriggerVolume : HasAnchoring{}
+extension Entity : HasCollision{}

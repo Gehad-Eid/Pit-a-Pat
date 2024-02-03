@@ -27,6 +27,7 @@
 		B8A8BA512B664B3000633A08 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA502B664B3000633A08 /* Controller.swift */; };
 		B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */; };
 		B8B970432B6A510B00990074 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B970422B6A510B00990074 /* InstructionView.swift */; };
+		B8B970472B6A9F4A00990074 /* SharedARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B970462B6A9F4A00990074 /* SharedARView.swift */; };
 		B8BFBDA82B62448D00161CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */; };
 		B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFBDA92B62448D00161CF6 /* MainView.swift */; };
 		B8BFBDAC2B62448E00161CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BFBDAB2B62448E00161CF6 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		B8A8BA502B664B3000633A08 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
 		B8B970422B6A510B00990074 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
+		B8B970462B6A9F4A00990074 /* SharedARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedARView.swift; sourceTree = "<group>"; };
 		B8BFBDA42B62448D00161CF6 /* Pit-a-Pat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pit-a-Pat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8BFBDA92B62448D00161CF6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				B87B894E2B68D3E70031E9D9 /* Functions */,
 				B8A8BA502B664B3000633A08 /* Controller.swift */,
 				B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */,
+				B8B970462B6A9F4A00990074 /* SharedARView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */,
 				B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */,
 				B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */,
+				B8B970472B6A9F4A00990074 /* SharedARView.swift in Sources */,
 				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
 				5AFB8B5E2B6785530099B033 /* AuthenticationServices.swift in Sources */,
 				5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */,

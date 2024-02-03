@@ -6,8 +6,8 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             //ZStack{
-            ARViewRepresentable(blurred: true)
-//            Rectangle()
+            //SharedARView(blurred: true)
+            Rectangle()
                 .edgesIgnoringSafeArea(.all)
                 .overlay(
                     VStack {
@@ -17,7 +17,7 @@ struct MainView: View {
                             .frame(width: 200, height: 200)
                             .clipped()
                         
-                        NavigationLink(destination: InstructionView()) {
+                        NavigationLink(destination: HostAGame()) {
                             Rectangle()
                                 .foregroundColor(Color("Color1"))
                                 .cornerRadius(12)

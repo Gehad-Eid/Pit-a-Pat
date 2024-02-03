@@ -1,20 +1,26 @@
-////
-////  container.swift
-////  Pit-a-Pat
-////
-////  Created by Gehad Eid on 29/01/2024.
-////
 //
-//import SwiftUI
+//  container.swift
+//  Pit-a-Pat
+//
+//  Created by Gehad Eid on 29/01/2024.
+//
+
+import SwiftUI
 //import AuthenticationServices
-//
-//struct container: View {
-//    var body: some View {
-//        
-//        //ZStack{
-//        ARViewRepresentable(blurred: true)
-//            .edgesIgnoringSafeArea(.all)
-//            .overlay(
+
+struct container: View {
+    @State var tt = false
+    var body: some View {
+        
+        //ZStack{
+        ARViewRepresentable(blurred: true)
+            .edgesIgnoringSafeArea(.all)
+            .overlay(
+                tt ? AnyView(HostAGame()) 
+                : AnyView(JoinAGame())
+
+                
+                
 //                NavigationStack {
 //                    VStack {
 //                        Image("PitAPat")
@@ -65,11 +71,11 @@
 //                }
 //                    .navigationViewStyle(StackNavigationViewStyle())
 //                    .edgesIgnoringSafeArea(.all)
-//            )
-//    }
-//}
-//
-//
-//#Preview {
-//    container()
-//}
+            )
+    }
+}
+
+
+#Preview {
+    container()
+}
