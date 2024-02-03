@@ -19,7 +19,6 @@ class CustomARView : ARView {
     
     var shouldAddBlurredRectangle: Bool
     
-    //    private
     convenience init(shouldAddBlurredRectangle: Bool = false){
         self.init(frame: UIScreen.main.bounds)
         self.shouldAddBlurredRectangle = shouldAddBlurredRectangle
