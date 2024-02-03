@@ -31,7 +31,7 @@ class ProfileViewModel: ObservableObject{
         }
         catch{
             
-        }
+        } 
     }
     
     //Create profile record

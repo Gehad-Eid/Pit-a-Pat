@@ -10,22 +10,7 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
                 .overlay(
             VStack {
-                NavigationLink(destination: ProfileView()) {
-                    HStack {
-                        Text("Hi \(profileVM.Name)")
-                            .font(.headline)                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
 
-                        Image("avatar\(Int.random(in: 1..<7))")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .padding(.vertical)
-                            .padding(.horizontal, 2)
-                        
-                    }
-                } .padding(EdgeInsets(top: -200 , leading: 230 , bottom: 0, trailing: 0))
                 Image("PitAPat")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -79,6 +64,28 @@ struct MainView: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink(destination: ProfileView()) {
+                    HStack {
+                        Text("Hi \(profileVM.Name)")
+                            .font(.headline)                            .foregroundColor(.white)
+                            .fontWeight(.semibold)
+
+                        Image("avatar\(Int.random(in: 1..<7))")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50, height: 40)
+                            .clipShape(Circle())
+                            .padding(.vertical)
+                            .padding(.horizontal, 2)
+                        
+                    }
+                }
+                
+                
+            }
+        }
     }
 }
 
