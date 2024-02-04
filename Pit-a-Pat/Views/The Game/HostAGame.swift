@@ -27,16 +27,16 @@ struct HostAGame: View {
                             .overlay(
                                 VStack{
                                     Text("تعليمات اللعبة و بعدها يضغط زر عشان يكمل للتعليمة اللي بعدها")
-                                    // 1. host or join ?
-                                    
-                                    // Host:
-                                    // 1. set the phone on the meddel of the playing zone and press start
-                                    // 2. connect with someone who's joining
-                                    // 3. press start
-                                    
-                                    //Join:
-                                    // 1. go to the host and peer with them
-                                    
+//                                     1. host or join ?
+//                                    
+//                                     Host:
+//                                     1. set the phone on the meddel of the playing zone and press start
+//                                     2. connect with someone who's joining
+//                                     3. press start
+//                                    
+//                                    Join:
+//                                     1. go to the host and peer with them
+//                                    
                                     Button{
                                         Manager.shared.ARStream.send(.removeAll)
                                     } label: {
