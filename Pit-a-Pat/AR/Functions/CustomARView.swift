@@ -8,19 +8,25 @@ import Combine
 class CustomARView : ARView {
     //    static let sharedAR = CustomARView()
     
-    required init(frame frameRect: CGRect) {
-        shouldAddBlurredRectangle = false
-        super.init(frame: frameRect)
-    }
+    var profileVM: ProfileViewModel // Assuming ProfileViewModel is already defined elsewhere
+
+        // Updated required initializer to include ProfileViewModel parameter
+        required init(frame frameRect: CGRect, profileVM: ProfileViewModel) {
+            self.shouldAddBlurredRectangle = false
+            self.profileVM = profileVM
+            super.init(frame: frameRect)
+//            setUpARView() // Assuming you want to set up the AR view upon initialization
+        }
     
     dynamic required init?(coder decoder: NSCoder) {
         fatalError("init?(coder decoder: NSCoder) isn't implemented")
     }
     
     var shouldAddBlurredRectangle: Bool
+//    var profileVM: ProfileViewModel
     
-    convenience init(shouldAddBlurredRectangle: Bool = false){
-        self.init(frame: UIScreen.main.bounds)
+    convenience init(frame frameRect: CGRect = UIScreen.main.bounds, shouldAddBlurredRectangle: Bool = false, profileVM: ProfileViewModel) {
+            self.init(frame: frameRect, profileVM: profileVM)
         self.shouldAddBlurredRectangle = shouldAddBlurredRectangle
         
         // Set the configuration
@@ -35,6 +41,10 @@ class CustomARView : ARView {
 
         startSceneUpdate()
         
+    }
+    
+    @MainActor override required dynamic init(frame frameRect: CGRect) {
+        fatalError("init(frame:) has not been implemented")
     }
     
     // Property to store the trigger volume
@@ -61,14 +71,20 @@ class CustomARView : ARView {
     
     var count = 0
     
+//    @StateObject var profileVM = ProfileViewModel()
+
+    
     var collisionSubscriptions = [Cancellable]()
     func addCollisionListening(onEntity entity: Entity & HasCollision) {
-        collisionSubscriptions.append(self.scene.subscribe(to: CollisionEvents.Began.self, on: entity) { event in
+        collisionSubscriptions.append(self.scene.subscribe(to: CollisionEvents.Began.self, on: entity) {  /*[weak self]*/ event in
             
             self.count += 1
+            self.profileVM.score += 1
+//            await self.profileVM.saveProfile()
             //Place code here for when the collision begins.
             print(event.entityA.name, "collided with", event.entityB.name)
-            print(self.count)
+//            print(self.count)
+            print(self.profileVM.score)
             self.scene.anchors.removeAll()
         })
         collisionSubscriptions.append(self.scene.subscribe(to: CollisionEvents.Ended.self, on: entity) { event in

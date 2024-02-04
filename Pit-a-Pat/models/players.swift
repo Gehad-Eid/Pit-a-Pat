@@ -14,4 +14,7 @@ struct Player : Identifiable{
         self.Name = record["Name"] as? String ?? "N/A"
         self.score = record["score"] as? Int ?? 0
     }
+    
+    
+    
 }

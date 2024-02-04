@@ -30,7 +30,11 @@ import SwiftUI
                 } else {
                     if isActive {
                         NavigationStack {
+                            //if name != "" ?
                             MainView()
+                           //     elsse {
+//                                nameView()
+                           // }
                         }
                         .navigationViewStyle(StackNavigationViewStyle())
                     }

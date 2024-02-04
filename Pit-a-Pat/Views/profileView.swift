@@ -9,18 +9,20 @@ struct ProfileView: View {
     
     @StateObject var profileVM = ProfileViewModel()
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         NavigationStack{
             ZStack {
-                ARViewRepresentable(blurred: true)
+                //                ARViewRepresentable(blurred: true)
+                Rectangle()
                     .edgesIgnoringSafeArea(.all)
                 
                 Image("Subtract")
                     .offset(y: -370)
                 
                 Text("Profile")
-                    .font(.system(size: 28, weight: .bold))                 .foregroundColor(Color.white)
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(Color.white)
                     .offset(y: -340)
                 
                 
@@ -39,7 +41,7 @@ struct ProfileView: View {
                                     .padding(.vertical)
                                     .padding(.horizontal, 2)
                             }.offset(y: -70)
-
+                            
                             
                             TextField("Name", text: $profileVM.Name)
                                 .offset(x: 150 , y: -70 )
@@ -55,10 +57,13 @@ struct ProfileView: View {
                                         Spacer()
                                         Text(String(profileVM.level))
                                             .padding(.trailing, 10)
-
-                                      
+                                        
+                                        
                                     }
-                                ) .offset(y: -50)
+                                )
+                                .offset(y: -50)
+                            
+                            
                             Rectangle()
                                 .foregroundColor(Color.white)
                                 .frame(width: 338, height: 83)
@@ -69,61 +74,59 @@ struct ProfileView: View {
                                             Text("Your Score")
                                                 .foregroundColor(.black)
                                                 .padding(.leading,20)
-                                              Spacer()
+                                            Spacer()
                                             Text(String(profileVM.score))
                                                 .padding(.trailing, 10)
-
-
-                                            
-                                        }                                     .foregroundColor(.black)
-                                    
+                                        }
+                                        .foregroundColor(.black)
+                                        
                                     }
                                 ).offset(y: -50)
-                            
-                     
                         }
-
-                       )
-                            
-                .cornerRadius(10)
-                    .padding(.bottom, -70)
-
+                        
+                    )
                 
-                .navigationBarBackButtonHidden(true)
-                        .navigationBarItems(leading:
-                                           Button(action: {
-                                               withAnimation {
-                                                   presentationMode.wrappedValue.dismiss()
-                                               }
-                                           }) {
-                                               Image(systemName: "chevron.backward")
-                                                   .foregroundColor(.white)
-
-                                             
-                                               
-                                           }
-                                       )               
-                        .toolbar {
-                            ToolbarItem(placement: .topBarTrailing) {
-                                Button {
-                                    Task {
-                                        await profileVM.saveProfile()
-                                    }
-                                } label: {
-                                    Text("Save")
-                                        .font(.headline)
-                                        .foregroundColor(Color.white) // تحديد لون النص هنا
+                    .cornerRadius(10)
+                    .padding(.bottom, -70)
+                
+                
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarItems(leading:
+                                            Button(action: {
+                        withAnimation {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.white)
+                        
+                        
+                        
+                    }
+                    )
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                Task {
+                                    await profileVM.saveProfile()
                                 }
+                            } label: {
+                                Text("Save")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white) // تحديد لون النص هنا
                             }
                         }
-                .task {
-                    await profileVM.fetchUserProfile()
-                }
+                    }
+                    .task {
+                        await profileVM.fetchUserProfile()
+                    }
             }
         }
         
     }
 }
+
+
 #Preview {
     ProfileView()
 }
