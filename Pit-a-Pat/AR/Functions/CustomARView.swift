@@ -111,6 +111,14 @@ class CustomARView : ARView {
             
             self.count += 1
             self.profileVM.score += 1
+            
+            Task {
+                do {
+                    await self.profileVM.saveProfile()
+                } catch {
+                    print("Failed to save profile: \(error)")
+                }
+            }
 //            await self.profileVM.saveProfile()
             //Place code here for when the collision begins.
             print(event.entityA.name, "collided with", event.entityB.name)
