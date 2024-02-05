@@ -1,10 +1,37 @@
-import Foundation
+
 import CloudKit
 
 class ViewModel: ObservableObject {
     @Published var players: [Player] = []
     let container = CKContainer(identifier: "iCloud.Pit-a-Pat2")
-
+    
+    init() {
+           NotificationCenter.default.addObserver(self, selector: #selector(fetchPlayers), name: NSNotification.Name("ProfileUpdated"), object: nil)
+           fetchPlayers()
+       }
+    
+    @objc func fetchPlayers() {
+            players.removeAll()
+            let predicate = NSPredicate(value: true)
+            let query = CKQuery(recordType: "Profile", predicate: predicate)
+            
+            let operation = CKQueryOperation(query: query)
+            var newPlayers: [Player] = []
+            
+            operation.recordFetchedBlock = { record in
+                let player = Player(record: record)
+                newPlayers.append(player)
+            }
+            
+            operation.queryCompletionBlock = { [weak self] (_, _) in
+                DispatchQueue.main.async {
+                    self?.players = newPlayers
+                }
+            }
+            
+            container.publicCloudDatabase.add(operation)
+        }
+    
     func fetchLearners() {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Profile", predicate: predicate)

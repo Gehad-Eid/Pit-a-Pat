@@ -12,10 +12,23 @@
 		B81CFF982B6A201000EFFEF6 /* Ball3.reality in Resources */ = {isa = PBXBuildFile; fileRef = B81CFF952B6A201000EFFEF6 /* Ball3.reality */; };
 		B81CFF992B6A201000EFFEF6 /* Ball2.reality in Resources */ = {isa = PBXBuildFile; fileRef = B81CFF962B6A201000EFFEF6 /* Ball2.reality */; };
 		B81CFF9B2B6A232A00EFFEF6 /* Ball0.reality in Resources */ = {isa = PBXBuildFile; fileRef = B81CFF9A2B6A232A00EFFEF6 /* Ball0.reality */; };
+		B85217AA2B6FC9B500709364 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217A92B6FC9B500709364 /* AppViewModel.swift */; };
+		B85217AD2B6FD5AF00709364 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217AC2B6FD5AF00709364 /* DatabaseManager.swift */; };
+		B85217B02B6FE8C500709364 /* MultipeerSession in Frameworks */ = {isa = PBXBuildFile; productRef = B85217AF2B6FE8C500709364 /* MultipeerSession */; };
+		B85217BA2B6FFC7600709364 /* BallYellow.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B12B6FFC7600709364 /* BallYellow.reality */; };
+		B85217BB2B6FFC7600709364 /* BallGreen.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B22B6FFC7600709364 /* BallGreen.reality */; };
+		B85217BC2B6FFC7600709364 /* Pat.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B32B6FFC7600709364 /* Pat.reality */; };
+		B85217BD2B6FFC7600709364 /* BallBink.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B42B6FFC7600709364 /* BallBink.reality */; };
+		B85217BE2B6FFC7600709364 /* BallOrange.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B52B6FFC7600709364 /* BallOrange.reality */; };
+		B85217BF2B6FFC7600709364 /* BallBlue.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B62B6FFC7600709364 /* BallBlue.reality */; };
+		B85217C02B6FFC7600709364 /* BallRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B72B6FFC7600709364 /* BallRed.reality */; };
+		B85217C12B6FFC7600709364 /* BallPurple.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B82B6FFC7600709364 /* BallPurple.reality */; };
+		B85217C22B6FFC7600709364 /* Hole.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B92B6FFC7600709364 /* Hole.reality */; };
+		B85217C52B7013DE00709364 /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217C42B7013DE00709364 /* MPConnectionManager.swift */; };
 		B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89392B66C3E00031E9D9 /* CustomARView.swift */; };
-		B87B893C2B66CAB70031E9D9 /* Hole.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B893B2B66CAB70031E9D9 /* Hole.reality */; };
+		B87B893C2B66CAB70031E9D9 /* Hole1.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B893B2B66CAB70031E9D9 /* Hole1.reality */; };
 		B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B893D2B66D6AE0031E9D9 /* Actions.swift */; };
-		B87B89442B66E1860031E9D9 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89432B66E1860031E9D9 /* Manager.swift */; };
+		B87B89442B66E1860031E9D9 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89432B66E1860031E9D9 /* ARManager.swift */; };
 		B87B89462B67B30D0031E9D9 /* ConnectWithSomeone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */; };
 		B87B89482B6842470031E9D9 /* container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89472B6842470031E9D9 /* container.swift */; };
 		B87B894A2B68D29B0031E9D9 /* HostAGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89492B68D29B0031E9D9 /* HostAGame.swift */; };
@@ -51,10 +64,23 @@
 		B81CFF952B6A201000EFFEF6 /* Ball3.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball3.reality; sourceTree = "<group>"; };
 		B81CFF962B6A201000EFFEF6 /* Ball2.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball2.reality; sourceTree = "<group>"; };
 		B81CFF9A2B6A232A00EFFEF6 /* Ball0.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball0.reality; sourceTree = "<group>"; };
+		B85217A92B6FC9B500709364 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		B85217AC2B6FD5AF00709364 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		B85217B12B6FFC7600709364 /* BallYellow.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallYellow.reality; sourceTree = "<group>"; };
+		B85217B22B6FFC7600709364 /* BallGreen.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallGreen.reality; sourceTree = "<group>"; };
+		B85217B32B6FFC7600709364 /* Pat.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pat.reality; sourceTree = "<group>"; };
+		B85217B42B6FFC7600709364 /* BallBink.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallBink.reality; sourceTree = "<group>"; };
+		B85217B52B6FFC7600709364 /* BallOrange.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallOrange.reality; sourceTree = "<group>"; };
+		B85217B62B6FFC7600709364 /* BallBlue.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallBlue.reality; sourceTree = "<group>"; };
+		B85217B72B6FFC7600709364 /* BallRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallRed.reality; sourceTree = "<group>"; };
+		B85217B82B6FFC7600709364 /* BallPurple.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallPurple.reality; sourceTree = "<group>"; };
+		B85217B92B6FFC7600709364 /* Hole.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole.reality; sourceTree = "<group>"; };
+		B85217C42B7013DE00709364 /* MPConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPConnectionManager.swift; sourceTree = "<group>"; };
+		B85217C62B706FA200709364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B87B89392B66C3E00031E9D9 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
-		B87B893B2B66CAB70031E9D9 /* Hole.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole.reality; sourceTree = "<group>"; };
+		B87B893B2B66CAB70031E9D9 /* Hole1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole1.reality; sourceTree = "<group>"; };
 		B87B893D2B66D6AE0031E9D9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		B87B89432B66E1860031E9D9 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		B87B89432B66E1860031E9D9 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
 		B87B89452B67B30D0031E9D9 /* ConnectWithSomeone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithSomeone.swift; sourceTree = "<group>"; };
 		B87B89472B6842470031E9D9 /* container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = container.swift; sourceTree = "<group>"; };
 		B87B89492B68D29B0031E9D9 /* HostAGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostAGame.swift; sourceTree = "<group>"; };
@@ -91,12 +117,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85217B02B6FE8C500709364 /* MultipeerSession in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B85217AB2B6FD58500709364 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B85217AC2B6FD5AF00709364 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		B85217C32B7013B500709364 /* MultiPeerConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				B85217C42B7013DE00709364 /* MPConnectionManager.swift */,
+			);
+			path = MultiPeerConnectivity;
+			sourceTree = "<group>";
+		};
 		B87B894D2B68D3020031E9D9 /* The Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +157,7 @@
 			children = (
 				B87B893D2B66D6AE0031E9D9 /* Actions.swift */,
 				B87B89392B66C3E00031E9D9 /* CustomARView.swift */,
-				B87B89432B66E1860031E9D9 /* Manager.swift */,
+				B87B89432B66E1860031E9D9 /* ARManager.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -125,6 +168,7 @@
 				B89BD02B2B6E637B004B25D0 /* players.swift */,
 				B89BD0292B6E637B004B25D0 /* profile.swift */,
 				B89BD02A2B6E637B004B25D0 /* user.swift */,
+				B85217A92B6FC9B500709364 /* AppViewModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -203,12 +247,24 @@
 		B8BFBDA62B62448D00161CF6 /* Pit-a-Pat */ = {
 			isa = PBXGroup;
 			children = (
+				B85217C62B706FA200709364 /* Info.plist */,
+				B85217C32B7013B500709364 /* MultiPeerConnectivity */,
+				B85217B42B6FFC7600709364 /* BallBink.reality */,
+				B85217B62B6FFC7600709364 /* BallBlue.reality */,
+				B85217B22B6FFC7600709364 /* BallGreen.reality */,
+				B85217B52B6FFC7600709364 /* BallOrange.reality */,
+				B85217B82B6FFC7600709364 /* BallPurple.reality */,
+				B85217B72B6FFC7600709364 /* BallRed.reality */,
+				B85217B12B6FFC7600709364 /* BallYellow.reality */,
+				B85217B92B6FFC7600709364 /* Hole.reality */,
+				B85217B32B6FFC7600709364 /* Pat.reality */,
+				B85217AB2B6FD58500709364 /* Database */,
 				B89BD02F2B6E6398004B25D0 /* Pit-a-Pat.entitlements */,
 				B81CFF9A2B6A232A00EFFEF6 /* Ball0.reality */,
 				B81CFF942B6A201000EFFEF6 /* Ball1.reality */,
 				B81CFF962B6A201000EFFEF6 /* Ball2.reality */,
 				B81CFF952B6A201000EFFEF6 /* Ball3.reality */,
-				B87B893B2B66CAB70031E9D9 /* Hole.reality */,
+				B87B893B2B66CAB70031E9D9 /* Hole1.reality */,
 				B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */,
 				B8BFBDAB2B62448E00161CF6 /* Assets.xcassets */,
 				B8A8BA4F2B664B1B00633A08 /* AR */,
@@ -245,6 +301,9 @@
 			dependencies = (
 			);
 			name = "Pit-a-Pat";
+			packageProductDependencies = (
+				B85217AF2B6FE8C500709364 /* MultipeerSession */,
+			);
 			productName = "Pit-a-Pat";
 			productReference = B8BFBDA42B62448D00161CF6 /* Pit-a-Pat.app */;
 			productType = "com.apple.product-type.application";
@@ -273,6 +332,9 @@
 				Base,
 			);
 			mainGroup = B8BFBD9B2B62448D00161CF6;
+			packageReferences = (
+				B85217AE2B6FE8C500709364 /* XCRemoteSwiftPackageReference "multipeer-session" */,
+			);
 			productRefGroup = B8BFBDA52B62448D00161CF6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -288,13 +350,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B81CFF972B6A201000EFFEF6 /* Ball1.reality in Resources */,
-				B87B893C2B66CAB70031E9D9 /* Hole.reality in Resources */,
+				B85217BA2B6FFC7600709364 /* BallYellow.reality in Resources */,
+				B87B893C2B66CAB70031E9D9 /* Hole1.reality in Resources */,
+				B85217BB2B6FFC7600709364 /* BallGreen.reality in Resources */,
 				B8BFBDAF2B62448E00161CF6 /* Preview Assets.xcassets in Resources */,
 				B8BFBDAC2B62448E00161CF6 /* Assets.xcassets in Resources */,
 				B81CFF992B6A201000EFFEF6 /* Ball2.reality in Resources */,
+				B85217BE2B6FFC7600709364 /* BallOrange.reality in Resources */,
+				B85217BD2B6FFC7600709364 /* BallBink.reality in Resources */,
+				B85217C02B6FFC7600709364 /* BallRed.reality in Resources */,
 				B81CFF9B2B6A232A00EFFEF6 /* Ball0.reality in Resources */,
+				B85217BC2B6FFC7600709364 /* Pat.reality in Resources */,
 				B81CFF982B6A201000EFFEF6 /* Ball3.reality in Resources */,
+				B85217C12B6FFC7600709364 /* BallPurple.reality in Resources */,
 				B89BD0492B6E646E004B25D0 /* tick3.mp3 in Resources */,
+				B85217C22B6FFC7600709364 /* Hole.reality in Resources */,
+				B85217BF2B6FFC7600709364 /* BallBlue.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,10 +378,13 @@
 			files = (
 				B89BD02D2B6E637B004B25D0 /* user.swift in Sources */,
 				B89BD0482B6E646E004B25D0 /* CircularProgressView.swift in Sources */,
+				B85217AD2B6FD5AF00709364 /* DatabaseManager.swift in Sources */,
+				B85217AA2B6FC9B500709364 /* AppViewModel.swift in Sources */,
 				B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */,
 				B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */,
 				B89BD0442B6E646E004B25D0 /* profileView.swift in Sources */,
 				B8BFBDAA2B62448D00161CF6 /* MainView.swift in Sources */,
+				B85217C52B7013DE00709364 /* MPConnectionManager.swift in Sources */,
 				B8B970472B6A9F4A00990074 /* SharedARView.swift in Sources */,
 				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
 				5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */,
@@ -325,7 +399,7 @@
 				B8A8BA512B664B3000633A08 /* Controller.swift in Sources */,
 				B89BD0352B6E643D004B25D0 /* AuthenticationServices.swift in Sources */,
 				B89BD0452B6E646E004B25D0 /* FriendsView.swift in Sources */,
-				B87B89442B66E1860031E9D9 /* Manager.swift in Sources */,
+				B87B89442B66E1860031E9D9 /* ARManager.swift in Sources */,
 				B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */,
 				B89BD0392B6E6447004B25D0 /* playersViewModel.swift in Sources */,
 				B89BD04A2B6E646E004B25D0 /* CountdownViewModel.swift in Sources */,
@@ -470,7 +544,9 @@
 				DEVELOPMENT_TEAM = 25ANLCX5P6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pit-a-Pat/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "To play Pit-a-Pat in multiuser mood";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -502,7 +578,9 @@
 				DEVELOPMENT_TEAM = 25ANLCX5P6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pit-a-Pat/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Thia App won't function without the camera access";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "To play Pit-a-Pat in multiuser mood";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -544,6 +622,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B85217AE2B6FE8C500709364 /* XCRemoteSwiftPackageReference "multipeer-session" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RyanKopinskyLLC/multipeer-session.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B85217AF2B6FE8C500709364 /* MultipeerSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B85217AE2B6FE8C500709364 /* XCRemoteSwiftPackageReference "multipeer-session" */;
+			productName = MultipeerSession;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8BFBD9C2B62448D00161CF6 /* Project object */;
 }

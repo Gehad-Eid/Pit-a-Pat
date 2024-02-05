@@ -38,7 +38,7 @@ struct HostAGame: View {
                                     // 1. go to the host and peer with them
                                     
                                     Button{
-                                        Manager.shared.ARStream.send(.removeAll)
+                                        ARManager.shared.ARStream.send(.removeAll)
                                     } label: {
                                         Image (systemName: "trash")
                                             .resizable()
@@ -61,7 +61,7 @@ struct HostAGame: View {
                             .padding()
                             .overlay(
                                 Button{
-                                    Manager.shared.ARStream.send(.addHoles)
+                                    ARManager.shared.ARStream.send(.addHoles)
                                 } label: {
                                     Image (systemName: "star")
                                         .resizable()
@@ -83,7 +83,7 @@ struct HostAGame: View {
                             .overlay(
 //                                NavigationLink(destination: ConnectWithSomeone().navigationBarBackButtonHidden(true)) {
                                     Button{
-                                        Manager.shared.ARStream.send(.throwBalls)
+                                        ARManager.shared.ARStream.send(.throwBalls)
                                     } label: {
                                         Image (systemName: "pin")
                                             .resizable()

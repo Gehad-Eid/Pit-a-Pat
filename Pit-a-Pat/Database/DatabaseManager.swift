@@ -1,15 +1,14 @@
 
-//  Created by Gehad Eid on 28/01/2024.
+//  Created by Gehad Eid on 04/02/2024.
+
 
 import Combine
 
-class Manager {
+class DatabaseManager {
     // Singleton pattern (means it would be only one instance of an object)
-    static let shared = Manager()
+    static let shared = DatabaseManager()
     private init(){}
     
     //pass values from our view to our AR view
-    var ARStream = PassthroughSubject<Actions, Never>()
-    
-    
+    var DatabaseStream = PassthroughSubject<Actions, Never>()
 }

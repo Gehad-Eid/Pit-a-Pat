@@ -8,8 +8,8 @@
 
 import CloudKit
 import SwiftUI
-import UIKit
-import PhotosUI
+//import UIKit
+//import PhotosUI
 
 class ProfileViewModel: ObservableObject{
     var userRecord: CKRecord? = nil
@@ -19,8 +19,27 @@ class ProfileViewModel: ObservableObject{
     @Published var Name: String = ""
     @Published var score: Int = 0
     @Published var level: Int = 1
-    @Published var selectedImage: PhotosPickerItem? = nil
+//    @Published var selectedImage: PhotosPickerItem? = nil
     
+    init() {
+            // Set up a subscription to monitor CloudKit changes
+        subscribeToProfileChanges()
+        }
+    
+    func subscribeToProfileChanges() {
+            let subscription = CKQuerySubscription(recordType: "Profile", predicate: NSPredicate(value: true), options: [.firesOnRecordCreation, .firesOnRecordUpdate])
+            let info = CKSubscription.NotificationInfo()
+            info.alertBody = "A player's profile has been updated."
+            info.shouldBadge = true
+            subscription.notificationInfo = info
+            
+            container.publicCloudDatabase.save(subscription) { _, error in
+                if let error = error {
+                    print("Subscription failed with error: \(error.localizedDescription)")
+                }
+            }
+        }
+
 
     //Get user record
     func getUserRecord() async {
@@ -76,6 +95,7 @@ class ProfileViewModel: ObservableObject{
         //Check if user already has a profile
         if let _ = userRecord.value(forKey: "userProfile" ) as? CKRecord.Reference {
             await  updateUserProfile()
+            NotificationCenter.default.post(name: NSNotification.Name("ProfileUpdated"), object: nil)
         }
         else{
             let userProfile = createProfileRecord()
@@ -85,6 +105,7 @@ class ProfileViewModel: ObservableObject{
                 switch result {
                 case .success(_):
                     //Show success alert
+                    NotificationCenter.default.post(name: NSNotification.Name("ProfileUpdated"), object: nil)
                     break
                 case .failure(let error):
                     print("Error: \(error)")
@@ -104,6 +125,7 @@ class ProfileViewModel: ObservableObject{
        
         do{
             try await container.publicCloudDatabase.save(userProfile)
+            NotificationCenter.default.post(name: NSNotification.Name("ProfileUpdated"), object: nil)
         }
         catch{
             print(error.localizedDescription)

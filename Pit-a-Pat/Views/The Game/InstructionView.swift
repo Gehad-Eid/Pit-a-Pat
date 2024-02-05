@@ -103,7 +103,7 @@ struct InstructionView: View {
             )
             .foregroundColor(.black)
             .onTapGesture {
-                Manager.shared.ARStream.send(.removeAll)
+                ARManager.shared.ARStream.send(.removeAll)
                 showInstruction1 = false
                 showInstruction2 = true
             }
@@ -133,7 +133,7 @@ struct InstructionView: View {
     
     private func startButtonView(geometry: GeometryProxy) -> some View {
         Button(action: {
-            Manager.shared.ARStream.send(.addHoles)
+            ARManager.shared.ARStream.send(.addHoles)
             showStartButton = false
             showCounter = true
             countdownViewModel.startCountdown()
