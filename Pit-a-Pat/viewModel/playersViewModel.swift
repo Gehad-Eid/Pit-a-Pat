@@ -48,9 +48,16 @@ class ViewModel: ObservableObject {
                 }
             }
         }
+        
+        operation.queryCompletionBlock = { [weak self] _, _ in
+            DispatchQueue.main.async {
+                self?.sortPlayersByScore()
+            }
+        }
 
         container.publicCloudDatabase.add(operation)
     }
+
 
     func addLearner() {
         let record = CKRecord(recordType: "Player")

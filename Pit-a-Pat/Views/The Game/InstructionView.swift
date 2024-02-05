@@ -76,7 +76,6 @@ struct InstructionView: View {
               
             }
         } .onAppear {
-            // Fetch the user profile when the view appears
             Task {
                 await profileVM.fetchUserProfile()
             }

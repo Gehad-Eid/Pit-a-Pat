@@ -36,15 +36,16 @@ struct ProfileView: View {
                                 Image("avatar\(Int.random(in: 1..<7))")
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 90, height: 90)
                                     .clipShape(Circle())
                                     .padding(.vertical)
                                     .padding(.horizontal, 2)
                             }.offset(y: -70)
                             
                             
-                            TextField("Name", text: $profileVM.Name)
-                                .offset(x: 150 , y: -70 )
+                            Text(profileVM.Name)
+                                .bold()
+                                .offset(x: 0 , y: -70 )
                             Rectangle()
                                 .foregroundColor(Color.white)
                                 .frame(width: 338, height: 83)
@@ -104,19 +105,19 @@ struct ProfileView: View {
                         
                     }
                     )
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button {
-                                Task {
-                                    await profileVM.saveProfile()
-                                }
-                            } label: {
-                                Text("Save")
-                                    .font(.headline)
-                                    .foregroundColor(Color.white) // تحديد لون النص هنا
-                            }
-                        }
-                    }
+//                    .toolbar {
+//                        ToolbarItem(placement: .topBarTrailing) {
+//                            Button {
+//                                Task {
+//                                    await profileVM.saveProfile()
+//                                }
+//                            } label: {
+//                                Text("Save")
+//                                    .font(.headline)
+//                                    .foregroundColor(Color.white) // تحديد لون النص هنا
+//                            }
+//                        }
+//                    }
                     .task {
                         await profileVM.fetchUserProfile()
                     }

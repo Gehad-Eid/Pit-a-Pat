@@ -1,7 +1,6 @@
 //
 //  user.swift
 //  Pit-a-Pat
-//
 //  Created by Faizah Almalki on 19/07/1445 AH.
 //
 
