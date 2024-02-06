@@ -18,12 +18,18 @@ struct InstructionView: View {
     @State private var remainingTime: Int = 60
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @StateObject var profileVM = ProfileViewModel()
+    
+//    @State private var textColor = Color.white
+//    @State private var textOpacity = 1.0 // Start fully visible
+//    @ObservedObject var overlayColorManager = OverlayColorManager()
+
 
     var body: some View {
         GeometryReader { geometry in
-            ARViewRepresentable(profileVM: profileVM)
-                .edgesIgnoringSafeArea(.all)
-//                .background(Color.clear)
+                ARViewRepresentable(/*overlayColorManager: overlayColorManager, */profileVM: profileVM)
+                    .edgesIgnoringSafeArea(.all)
+    //                .background(Color.clear)
+            
             
             if showInstruction1 {
                 instructionView1(geometry: geometry)
@@ -69,7 +75,18 @@ struct InstructionView: View {
                         }
                     }.position(x: geometry.size.width / 2, y: geometry.size.height / 9)
                     
-
+//                    if textOpacity > 0 {
+//                            Text("Hit the Balls!")
+//                                .font(.headline)
+//                                .foregroundColor(ARManager.shared.ARStream.send(.color))
+//                                .opacity(1)
+//                                .onAppear {
+//                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                                        self.overlayColorManager.textOpacity = 0 // Make text disappear after 3 seconds
+//                                    }
+//                                }
+//                        }
+                   
                 }
                 
                 
@@ -169,10 +186,10 @@ struct InstructionView: View {
     }
 }
 
-#if DEBUG
-struct InstructionView_Previews: PreviewProvider {
-    static var previews: some View {
-        InstructionView()
-    }
-}
-#endif
+//#if DEBUG
+//struct InstructionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InstructionView()
+//    }
+//}
+//#endif

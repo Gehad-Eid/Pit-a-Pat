@@ -7,5 +7,5 @@ enum Actions{
 //    case addHoles
     case throwBalls //(difficulty: Int)
     case removeAll
-    
+    case colorChange
 }

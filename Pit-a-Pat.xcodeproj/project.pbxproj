@@ -20,13 +20,15 @@
 		B85217C52B7013DE00709364 /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217C42B7013DE00709364 /* MPConnectionManager.swift */; };
 		B85217C92B71539A00709364 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217C82B71539A00709364 /* CameraView.swift */; };
 		B85217CB2B7153BE00709364 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217CA2B7153BE00709364 /* CameraViewController.swift */; };
-		B85217D52B72034600709364 /* BallOrange.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217CE2B72034600709364 /* BallOrange.reality */; };
-		B85217D62B72034600709364 /* BallRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217CF2B72034600709364 /* BallRed.reality */; };
-		B85217D72B72034600709364 /* BallPurple.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D02B72034600709364 /* BallPurple.reality */; };
-		B85217D82B72034600709364 /* BallBink.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D12B72034600709364 /* BallBink.reality */; };
-		B85217D92B72034600709364 /* BallGreen.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D22B72034600709364 /* BallGreen.reality */; };
-		B85217DA2B72034600709364 /* BlueBall.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D32B72034600709364 /* BlueBall.reality */; };
-		B85217DB2B72034600709364 /* BallYellow.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D42B72034600709364 /* BallYellow.reality */; };
+		B85217E32B720A1D00709364 /* BallGreen.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217DC2B720A1D00709364 /* BallGreen.reality */; };
+		B85217E42B720A1D00709364 /* BallRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217DD2B720A1D00709364 /* BallRed.reality */; };
+		B85217E52B720A1D00709364 /* BallYellow.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217DE2B720A1D00709364 /* BallYellow.reality */; };
+		B85217E62B720A1D00709364 /* BallPurple.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217DF2B720A1D00709364 /* BallPurple.reality */; };
+		B85217E72B720A1D00709364 /* BallOrange.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217E02B720A1D00709364 /* BallOrange.reality */; };
+		B85217E82B720A1D00709364 /* BlueBall.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217E12B720A1D00709364 /* BlueBall.reality */; };
+		B85217E92B720A1D00709364 /* BallBink.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217E22B720A1D00709364 /* BallBink.reality */; };
+		B85217EB2B720ED600709364 /* OverlayColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217EA2B720ED600709364 /* OverlayColorManager.swift */; };
+		B85217ED2B720F7700709364 /* ARViewOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217EC2B720F7700709364 /* ARViewOverlay.swift */; };
 		B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89392B66C3E00031E9D9 /* CustomARView.swift */; };
 		B87B893C2B66CAB70031E9D9 /* Hole1.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B893B2B66CAB70031E9D9 /* Hole1.reality */; };
 		B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B893D2B66D6AE0031E9D9 /* Actions.swift */; };
@@ -74,13 +76,15 @@
 		B85217C62B706FA200709364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B85217C82B71539A00709364 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B85217CA2B7153BE00709364 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		B85217CE2B72034600709364 /* BallOrange.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallOrange.reality; path = ../../BallOrange.reality; sourceTree = "<group>"; };
-		B85217CF2B72034600709364 /* BallRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallRed.reality; path = ../../BallRed.reality; sourceTree = "<group>"; };
-		B85217D02B72034600709364 /* BallPurple.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallPurple.reality; path = ../../BallPurple.reality; sourceTree = "<group>"; };
-		B85217D12B72034600709364 /* BallBink.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallBink.reality; path = ../../BallBink.reality; sourceTree = "<group>"; };
-		B85217D22B72034600709364 /* BallGreen.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallGreen.reality; path = ../../BallGreen.reality; sourceTree = "<group>"; };
-		B85217D32B72034600709364 /* BlueBall.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlueBall.reality; sourceTree = "<group>"; };
-		B85217D42B72034600709364 /* BallYellow.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallYellow.reality; path = ../../BallYellow.reality; sourceTree = "<group>"; };
+		B85217DC2B720A1D00709364 /* BallGreen.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallGreen.reality; path = ../../../Downloads/BallGreen.reality; sourceTree = "<group>"; };
+		B85217DD2B720A1D00709364 /* BallRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallRed.reality; path = ../../../Downloads/BallRed.reality; sourceTree = "<group>"; };
+		B85217DE2B720A1D00709364 /* BallYellow.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallYellow.reality; path = ../../../Downloads/BallYellow.reality; sourceTree = "<group>"; };
+		B85217DF2B720A1D00709364 /* BallPurple.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallPurple.reality; path = ../../../Downloads/BallPurple.reality; sourceTree = "<group>"; };
+		B85217E02B720A1D00709364 /* BallOrange.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallOrange.reality; path = ../../../Downloads/BallOrange.reality; sourceTree = "<group>"; };
+		B85217E12B720A1D00709364 /* BlueBall.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BlueBall.reality; path = ../../../Downloads/BlueBall.reality; sourceTree = "<group>"; };
+		B85217E22B720A1D00709364 /* BallBink.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallBink.reality; path = ../../../Downloads/BallBink.reality; sourceTree = "<group>"; };
+		B85217EA2B720ED600709364 /* OverlayColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayColorManager.swift; sourceTree = "<group>"; };
+		B85217EC2B720F7700709364 /* ARViewOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewOverlay.swift; sourceTree = "<group>"; };
 		B87B89392B66C3E00031E9D9 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		B87B893B2B66CAB70031E9D9 /* Hole1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole1.reality; sourceTree = "<group>"; };
 		B87B893D2B66D6AE0031E9D9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				B89BD0342B6E643D004B25D0 /* AuthenticationServices.swift */,
+				B85217EA2B720ED600709364 /* OverlayColorManager.swift */,
+				B85217EC2B720F7700709364 /* ARViewOverlay.swift */,
 			);
 			path = "Servcies ";
 			sourceTree = "<group>";
@@ -260,13 +266,13 @@
 		B8BFBDA62B62448D00161CF6 /* Pit-a-Pat */ = {
 			isa = PBXGroup;
 			children = (
-				B85217D12B72034600709364 /* BallBink.reality */,
-				B85217D22B72034600709364 /* BallGreen.reality */,
-				B85217CE2B72034600709364 /* BallOrange.reality */,
-				B85217D02B72034600709364 /* BallPurple.reality */,
-				B85217CF2B72034600709364 /* BallRed.reality */,
-				B85217D42B72034600709364 /* BallYellow.reality */,
-				B85217D32B72034600709364 /* BlueBall.reality */,
+				B85217E22B720A1D00709364 /* BallBink.reality */,
+				B85217DC2B720A1D00709364 /* BallGreen.reality */,
+				B85217E02B720A1D00709364 /* BallOrange.reality */,
+				B85217DF2B720A1D00709364 /* BallPurple.reality */,
+				B85217DD2B720A1D00709364 /* BallRed.reality */,
+				B85217DE2B720A1D00709364 /* BallYellow.reality */,
+				B85217E12B720A1D00709364 /* BlueBall.reality */,
 				B85217C62B706FA200709364 /* Info.plist */,
 				B85217B92B6FFC7600709364 /* Hole.reality */,
 				B85217B32B6FFC7600709364 /* Pat.reality */,
@@ -364,22 +370,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B81CFF972B6A201000EFFEF6 /* Ball1.reality in Resources */,
-				B85217DB2B72034600709364 /* BallYellow.reality in Resources */,
-				B85217D72B72034600709364 /* BallPurple.reality in Resources */,
+				B85217E92B720A1D00709364 /* BallBink.reality in Resources */,
+				B85217E62B720A1D00709364 /* BallPurple.reality in Resources */,
 				B87B893C2B66CAB70031E9D9 /* Hole1.reality in Resources */,
-				B85217D82B72034600709364 /* BallBink.reality in Resources */,
 				B8BFBDAF2B62448E00161CF6 /* Preview Assets.xcassets in Resources */,
-				B85217D52B72034600709364 /* BallOrange.reality in Resources */,
-				B85217DA2B72034600709364 /* BlueBall.reality in Resources */,
 				B8BFBDAC2B62448E00161CF6 /* Assets.xcassets in Resources */,
+				B85217E72B720A1D00709364 /* BallOrange.reality in Resources */,
 				B81CFF992B6A201000EFFEF6 /* Ball2.reality in Resources */,
 				B81CFF9B2B6A232A00EFFEF6 /* Ball0.reality in Resources */,
 				B85217BC2B6FFC7600709364 /* Pat.reality in Resources */,
 				B81CFF982B6A201000EFFEF6 /* Ball3.reality in Resources */,
 				B89BD0492B6E646E004B25D0 /* tick3.mp3 in Resources */,
+				B85217E82B720A1D00709364 /* BlueBall.reality in Resources */,
+				B85217E42B720A1D00709364 /* BallRed.reality in Resources */,
+				B85217E52B720A1D00709364 /* BallYellow.reality in Resources */,
 				B85217C22B6FFC7600709364 /* Hole.reality in Resources */,
-				B85217D62B72034600709364 /* BallRed.reality in Resources */,
-				B85217D92B72034600709364 /* BallGreen.reality in Resources */,
+				B85217E32B720A1D00709364 /* BallGreen.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85217ED2B720F7700709364 /* ARViewOverlay.swift in Sources */,
 				B89BD02D2B6E637B004B25D0 /* user.swift in Sources */,
 				B89BD0482B6E646E004B25D0 /* CircularProgressView.swift in Sources */,
 				B85217AD2B6FD5AF00709364 /* DatabaseManager.swift in Sources */,
@@ -401,6 +408,7 @@
 				B85217C52B7013DE00709364 /* MPConnectionManager.swift in Sources */,
 				B8B970472B6A9F4A00990074 /* SharedARView.swift in Sources */,
 				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
+				B85217EB2B720ED600709364 /* OverlayColorManager.swift in Sources */,
 				B85217CB2B7153BE00709364 /* CameraViewController.swift in Sources */,
 				5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */,
 				B87B894C2B68D2E00031E9D9 /* JoinAGame.swift in Sources */,

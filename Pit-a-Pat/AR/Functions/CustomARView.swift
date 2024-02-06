@@ -10,7 +10,18 @@ import MultipeerSession
 
 class CustomARView : ARView {
     
+    var overlayColorManager: OverlayColorManager?
+    
+//    // Add or update the addColorOverlay(named:) function
+//        func addColorOverlay(named entityName: String) {
+//            let color = entityNameToColor(entityName)
+//            DispatchQueue.main.async {
+//                self.overlayColorManager?.color = color
+//            }
+//        }
+    
     //    var score : Int
+    var nameBall = "BallYellow"
     
     var multipeerSession: MultipeerSession?
     var sessionIDObservation: NSKeyValueObservation?
@@ -145,6 +156,22 @@ class CustomARView : ARView {
     }
     
     
+    func colorForBallEntity() -> Color {
+        switch nameBall {
+        case "BallYellow": return .yellow
+        case "BallRed": return .red
+        case "BallPurple": return .purple
+        case "BallOrange": return .orange
+        case "BallGreen": return .green
+        case "BlueBall": return .blue
+        case "BallPink": return .pink
+        default:
+            return .white // Default color
+        }
+    }
+    
+    
+    
     // Array of entity names
     let entityNames = ["BallYellow", "BallRed", "BallPurple", "BallOrange", "BallGreen", "BlueBall", "BallBink"]
     
@@ -167,11 +194,38 @@ class CustomARView : ARView {
         BallEntity = try? Entity.load(named: name ?? "BallYellow")
         BallEntity?.name = name!
         
+//        nameBall = name ?? "BallYellow"
+        let centerPoint = CGPoint(x: bounds.midX, y: bounds.midY)
+            
+            // Perform a ray-cast to find a surface from the center of the screen
+            let raycastQuery = makeRaycastQuery(from: centerPoint, allowing: .estimatedPlane, alignment: .any)
+            if let raycastQuery = raycastQuery,
+               let raycastResult = session.raycast(raycastQuery).first {
+                
+                // Create an anchor at the hit result position
+                let anchor = AnchorEntity(world: raycastResult.worldTransform)
+                scene.addAnchor(anchor)
+                
+                // Add a text entity to the anchor (simplified approach)
+                // Here you would typically load a 3D model of text or create a textured plane
+//                let box = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .white, isMetallic: false)])
+                anchor.addChild(textGen(textString: name ?? "BallYellow"))
+                
+                // If you need actual text rendering, consider using SceneKit's SCNText or a custom 3D text model
+            }
+        
+        
         BallEntity?.components[CollisionComponent.self] = CollisionComponent(
             shapes: [.generateBox(size: [0.2,0.2,0.2])],
             mode: .trigger,
             filter: CollisionFilter(group: CollisionGroup(rawValue: 1), mask: CollisionGroup(rawValue: 2))
         )
+        
+//        let ballColor = self.colorForBallEntity(named: name ?? "BallYellow") // Get color for the current ball
+//        DispatchQueue.main.async {
+//            self.overlayColorManager?.textColor = ballColor // Assuming overlayColorManager handles your color state
+//            self.overlayColorManager?.textOpacity = 1.0 // Reset to make text visible again
+//        }
         
         addCollisionListening(onEntity: BallEntity! as Entity & HasCollision)
         
@@ -202,6 +256,28 @@ class CustomARView : ARView {
         }
     }
     
+    func textGen(textString: String) -> ModelEntity {
+            
+            let materialVar = SimpleMaterial(color: .black, roughness: 0, isMetallic: false)
+            
+            let depthVar: Float = 0.001
+            let fontVar = UIFont.systemFont(ofSize: 0.01)
+            let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
+            let alignmentVar: CTTextAlignment = .center
+            let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
+            
+            let textMeshResource : MeshResource = .generateText(textString,
+                                               extrusionDepth: depthVar,
+                                               font: fontVar,
+                                               containerFrame: containerFrameVar,
+                                               alignment: alignmentVar,
+                                               lineBreakMode: lineBreakModeVar)
+            
+            let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
+            
+            return textEntity
+        }
+    
     
     // Configuration
     func setUpARView() {
@@ -228,6 +304,8 @@ class CustomARView : ARView {
                     
                 case .removeAll:
                     self?.scene.anchors.removeAll()
+                case .colorChange:
+                    self?.colorForBallEntity()
                 }
             }
             .store(in: &cancellables)
@@ -420,6 +498,30 @@ extension CustomARView {
     
     
 }
+
+//extension CustomARView {
+//    // Assuming a function that translates entity names to SwiftUI colors exists
+//    func entityNameToColor(_ name: String) -> Color {
+//        switch name {
+//        case "BallYellow": return .yellow
+//        case "BallRed": return .red
+//        case "BallPurple": return .purple
+//        case "BallOrange": return .orange
+//        case "BallGreen": return .green
+//        case "BlueBall": return .blue
+//        case "BallPink": return .pink
+//        default: return .white // Default color if no match is found
+//        }
+//    }
+//    
+//    func addColorOverlay(named entityName: String) {
+//        let color = entityNameToColor(entityName)
+//        // Update the shared OverlayColorManager's color
+//        DispatchQueue.main.async {
+//            self.overlayColorManager.color = color
+//        }
+//    }
+//}
 
 extension TriggerVolume : HasAnchoring{}
 extension Entity : HasCollision{}
