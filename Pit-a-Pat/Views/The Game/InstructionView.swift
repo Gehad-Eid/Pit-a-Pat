@@ -4,7 +4,6 @@
 //
 //  Created by Gehad Eid on 31/01/2024.
 //
-
 import SwiftUI
 
 struct InstructionView: View {
@@ -18,71 +17,82 @@ struct InstructionView: View {
     @State private var remainingTime: Int = 60
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @StateObject var profileVM = ProfileViewModel()
+    @State private var showVictoryMessage = false
+    @State private var victoryMessage = ""
+    @Environment(\.presentationMode) var presentationMode
+
 
     var body: some View {
-        GeometryReader { geometry in
-            ARViewRepresentable()
-                .edgesIgnoringSafeArea(.all)
-                .background(Color.clear)
-            
-            if showInstruction1 {
-                instructionView1(geometry: geometry)
-            } else if showInstruction2 {
-                instructionView2(geometry: geometry)
-            } else if showStartButton {
-                startButtonView(geometry: geometry)
-            } else if showCounter && countdownViewModel.counter > 0 {
-                counterView(geometry: geometry)
-            } else {
-                VStack{
-                    
-                    HStack{
-                        ZStack{
-                            Image("ball1")
-                            Text("0\n\(profileVM.Name)\n")
-                                .font(.headline)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                        
+        NavigationView{
+            GeometryReader { geometry in
+                ARViewRepresentable()
+                    .edgesIgnoringSafeArea(.all)
+                    .background(Color.clear)
+                
+                if showInstruction1 {
+                    instructionView1(geometry: geometry)
+                } else if showInstruction2 {
+                    instructionView2(geometry: geometry)
+                } else if showStartButton {
+                    startButtonView(geometry: geometry)
+                } else if showCounter && countdownViewModel.counter > 0 {
+                    counterView(geometry: geometry)
+                } else if showVictoryMessage {
+                    Text(victoryMessage)
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2)           .onTapGesture {
+                            showVictoryMessage = false
                         }
-                        Spacer()
-                        CircularProgressView(progress: progress, remainingTime: remainingTime)
-                            .onReceive(timer) { _ in
-                                if remainingTime > 0 {
-                                    progress -= 1.0 / 60.0
-                                    remainingTime -= 1
-                                } else {
-                                    timer.upstream.connect().cancel()
-                                }
+                } else {
+                    VStack{
+                        HStack{
+                            ZStack{
+                                Image("ball1")
+                                Text("0\nMona\n")
+                                    .font(.headline)
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
                             }
-                        Spacer()
-                        
-                        ZStack{
-                            Image("ball2")
-                            Text("0\n\(profileVM.Name)\n")
-                                .font(.headline)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                        }
-                    }.position(x: geometry.size.width / 2, y: geometry.size.height / 9)
-                    
-
+                            Spacer()
+                            CircularProgressView(progress: progress, remainingTime: remainingTime)
+                                .onReceive(timer) { _ in
+                                    if remainingTime > 0 {
+                                        progress -= 1.0 / 60.0
+                                        remainingTime -= 1
+                                    } else {
+                                        timer.upstream.connect().cancel()
+                                        showVictoryMessage = true
+                                        victoryMessage = Bool.random() ? "You won! 🎉" : "You lost! 😢"
+                                    }
+                                }
+                            Spacer()
+                            
+                            ZStack{
+                                Image("ball2")
+                                Text("0\n\(profileVM.Name)\n")
+                                    .font(.headline)
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                            }
+                        }.position(x: geometry.size.width / 2, y: geometry.size.height / 9)
+                    }
                 }
-                
-                
-                
-                
-                
-              
+            }.onAppear {
+                Task {
+                    await profileVM.fetchUserProfile()
+                }
             }
-        } .onAppear {
-            Task {
-                await profileVM.fetchUserProfile()
-            }
-        }
+            
+            
+        }             .navigationBarBackButtonHidden(true)
+        
+        
+        
+   
+                                
+
     }
-    
-    
     
     
     private func instructionView1(geometry: GeometryProxy) -> some View {
@@ -142,7 +152,7 @@ struct InstructionView: View {
                 .frame(width: 335, height: 72)
                 .cornerRadius(8)
                 .overlay(
-                    Text("Set the phone in the middle of the playing zone and press to start")
+                    Text("Place the two devices next to each other and scan the area around you")
                         .font(.custom("Ithra-Bold", size: 18))
                         .padding()
                         .foregroundColor(.black)
