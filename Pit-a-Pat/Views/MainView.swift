@@ -43,7 +43,7 @@ struct MainView: View {
                             )
                     }
                     
-                    NavigationLink(destination: PlayersView()) {
+                    NavigationLink(destination: PlayersView(loggedInUsername: profileVM.Name)) {
                                      Rectangle()
                                          .foregroundColor(Color("Color1"))
                                          .cornerRadius(12)

@@ -25,25 +25,25 @@ class ProfileViewModel: ObservableObject{
 //    @Published var selectedImage: PhotosPickerItem? = nil
     
     init() {
-            // Set up a subscription to monitor CloudKit changes
+        // Set up a subscription to monitor CloudKit changes
         subscribeToProfileChanges()
-        }
+    }
     
     func subscribeToProfileChanges() {
-            let subscription = CKQuerySubscription(recordType: "Profile", predicate: NSPredicate(value: true), options: [.firesOnRecordCreation, .firesOnRecordUpdate])
-            let info = CKSubscription.NotificationInfo()
-            info.alertBody = "A player's profile has been updated."
-            info.shouldBadge = true
-            subscription.notificationInfo = info
-            
-            container.publicCloudDatabase.save(subscription) { _, error in
-                if let error = error {
-                    print("Subscription failed with error: \(error.localizedDescription)")
-                }
+        let subscription = CKQuerySubscription(recordType: "Profile", predicate: NSPredicate(value: true), options: [.firesOnRecordCreation, .firesOnRecordUpdate])
+        let info = CKSubscription.NotificationInfo()
+        info.alertBody = "A player's profile has been updated."
+        info.shouldBadge = true
+        subscription.notificationInfo = info
+        
+        container.publicCloudDatabase.save(subscription) { _, error in
+            if let error = error {
+                print("Subscription failed with error: \(error.localizedDescription)")
             }
         }
-
-
+    }
+    
+    
     //Get user record
     func getUserRecord() async {
         do{
@@ -53,7 +53,7 @@ class ProfileViewModel: ObservableObject{
         }
         catch{
             
-        } 
+        }
     }
     
     //Create profile record
@@ -118,22 +118,20 @@ class ProfileViewModel: ObservableObject{
     }
     
     //Update user profile
-    func updateUserProfile() async{
-        guard let userProfile else {
+    func updateUserProfile() async {
+        guard var userProfile = userProfile else {
             return
         }
-        userProfile.setValue(Name, forKey: "Name")
-        userProfile.setValue(score, forKey: "score")
-        userProfile.setValue(level, forKey: "level")
-       
-        do{
+        
+        userProfile["Name"] = Name
+        userProfile["score"] = score
+        userProfile["level"] = level
+        
+        do {
             try await container.publicCloudDatabase.save(userProfile)
             NotificationCenter.default.post(name: NSNotification.Name("ProfileUpdated"), object: nil)
-        }
-        catch{
+        } catch {
             print(error.localizedDescription)
         }
     }
-    
 }
-

@@ -4,6 +4,11 @@ import CloudKit
 struct PlayersView: View {
     @StateObject var viewModel = ViewModel()
     @Environment(\.presentationMode) var presentationMode
+    let loggedInUsername: String // تمرير اسم المستخدم المسجل
+
+    init(loggedInUsername: String) {
+        self.loggedInUsername = loggedInUsername
+    }
 
     var body: some View {
         NavigationView {
@@ -31,12 +36,14 @@ struct PlayersView: View {
                                     ForEach(0..<viewModel.players.count, id: \.self) { index in
                                         let player = viewModel.players[index]
                                         let rank = index + 1
-
+                                        let isCurrentUser = player.Name == loggedInUsername
                                         Rectangle()
+                                            .clipShape(RoundedRectangle(cornerRadius: 12))
                                             .foregroundColor(Color.white)
                                             .frame(width: 338, height: 83)
-                                            .cornerRadius(12)
+                                            .border(isCurrentUser ? Color.red : Color.white, width: 4)
                                             .overlay(
+                                        
                                                 HStack {
                                                     Text("\(rank)")
                                                         .font(.system(size: 30, weight: .semibold))
@@ -62,8 +69,10 @@ struct PlayersView: View {
                                                     
                                                 }
                                                 .frame(maxWidth: .infinity, alignment: .trailing)
-                                                .padding(8)
-                                            )
+                                                       .padding(8)
+                                                
+                                            )                        .cornerRadius(10)
+
                                     }
                                 }
                                 .padding(.top, 20)
@@ -78,19 +87,17 @@ struct PlayersView: View {
                 viewModel.sortPlayersByScore()
             }
       
-        }             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading:
-                               Button(action: {
-                                   withAnimation {
-                                       presentationMode.wrappedValue.dismiss()
-                                   }
-                               }) {
-                                   Image(systemName: "chevron.backward")
-                                       .foregroundColor(.white)
-                             
-                               
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                           Button(action: {
+                               withAnimation {
+                                   presentationMode.wrappedValue.dismiss()
+                               }
+                           }) {
+                               Image(systemName: "chevron.backward")
+                                   .foregroundColor(.white)
                            }
         )
-
     }
 }
