@@ -9,7 +9,7 @@ import SwiftUI
 struct ARViewRepresentable : UIViewRepresentable {
     // by default the camera isn't blurred
         @State var blurred = false
-    @StateObject var profileVM = ProfileViewModel()
+    var profileVM : ProfileViewModel
     
     func makeUIView(context: Context) -> CustomARView {
         if blurred {

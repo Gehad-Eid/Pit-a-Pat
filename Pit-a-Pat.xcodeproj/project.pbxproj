@@ -15,16 +15,18 @@
 		B85217AA2B6FC9B500709364 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217A92B6FC9B500709364 /* AppViewModel.swift */; };
 		B85217AD2B6FD5AF00709364 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217AC2B6FD5AF00709364 /* DatabaseManager.swift */; };
 		B85217B02B6FE8C500709364 /* MultipeerSession in Frameworks */ = {isa = PBXBuildFile; productRef = B85217AF2B6FE8C500709364 /* MultipeerSession */; };
-		B85217BA2B6FFC7600709364 /* BallYellow.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B12B6FFC7600709364 /* BallYellow.reality */; };
-		B85217BB2B6FFC7600709364 /* BallGreen.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B22B6FFC7600709364 /* BallGreen.reality */; };
 		B85217BC2B6FFC7600709364 /* Pat.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B32B6FFC7600709364 /* Pat.reality */; };
-		B85217BD2B6FFC7600709364 /* BallBink.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B42B6FFC7600709364 /* BallBink.reality */; };
-		B85217BE2B6FFC7600709364 /* BallOrange.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B52B6FFC7600709364 /* BallOrange.reality */; };
-		B85217BF2B6FFC7600709364 /* BallBlue.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B62B6FFC7600709364 /* BallBlue.reality */; };
-		B85217C02B6FFC7600709364 /* BallRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B72B6FFC7600709364 /* BallRed.reality */; };
-		B85217C12B6FFC7600709364 /* BallPurple.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B82B6FFC7600709364 /* BallPurple.reality */; };
 		B85217C22B6FFC7600709364 /* Hole.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217B92B6FFC7600709364 /* Hole.reality */; };
 		B85217C52B7013DE00709364 /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217C42B7013DE00709364 /* MPConnectionManager.swift */; };
+		B85217C92B71539A00709364 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217C82B71539A00709364 /* CameraView.swift */; };
+		B85217CB2B7153BE00709364 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85217CA2B7153BE00709364 /* CameraViewController.swift */; };
+		B85217D52B72034600709364 /* BallOrange.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217CE2B72034600709364 /* BallOrange.reality */; };
+		B85217D62B72034600709364 /* BallRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217CF2B72034600709364 /* BallRed.reality */; };
+		B85217D72B72034600709364 /* BallPurple.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D02B72034600709364 /* BallPurple.reality */; };
+		B85217D82B72034600709364 /* BallBink.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D12B72034600709364 /* BallBink.reality */; };
+		B85217D92B72034600709364 /* BallGreen.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D22B72034600709364 /* BallGreen.reality */; };
+		B85217DA2B72034600709364 /* BlueBall.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D32B72034600709364 /* BlueBall.reality */; };
+		B85217DB2B72034600709364 /* BallYellow.reality in Resources */ = {isa = PBXBuildFile; fileRef = B85217D42B72034600709364 /* BallYellow.reality */; };
 		B87B893A2B66C3E00031E9D9 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B89392B66C3E00031E9D9 /* CustomARView.swift */; };
 		B87B893C2B66CAB70031E9D9 /* Hole1.reality in Resources */ = {isa = PBXBuildFile; fileRef = B87B893B2B66CAB70031E9D9 /* Hole1.reality */; };
 		B87B893E2B66D6AE0031E9D9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B893D2B66D6AE0031E9D9 /* Actions.swift */; };
@@ -46,7 +48,7 @@
 		B89BD0482B6E646E004B25D0 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BD0402B6E646E004B25D0 /* CircularProgressView.swift */; };
 		B89BD0492B6E646E004B25D0 /* tick3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B89BD0412B6E646E004B25D0 /* tick3.mp3 */; };
 		B89BD04A2B6E646E004B25D0 /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BD0422B6E646E004B25D0 /* CountdownViewModel.swift */; };
-		B89BD04B2B6E646E004B25D0 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BD0432B6E646E004B25D0 /* SwiftUIView.swift */; };
+		B89BD04B2B6E646E004B25D0 /* MultipeerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BD0432B6E646E004B25D0 /* MultipeerSession.swift */; };
 		B8A8BA4E2B65A53D00633A08 /* Leaderboared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */; };
 		B8A8BA512B664B3000633A08 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA502B664B3000633A08 /* Controller.swift */; };
 		B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */; };
@@ -66,17 +68,19 @@
 		B81CFF9A2B6A232A00EFFEF6 /* Ball0.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ball0.reality; sourceTree = "<group>"; };
 		B85217A92B6FC9B500709364 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B85217AC2B6FD5AF00709364 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		B85217B12B6FFC7600709364 /* BallYellow.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallYellow.reality; sourceTree = "<group>"; };
-		B85217B22B6FFC7600709364 /* BallGreen.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallGreen.reality; sourceTree = "<group>"; };
 		B85217B32B6FFC7600709364 /* Pat.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pat.reality; sourceTree = "<group>"; };
-		B85217B42B6FFC7600709364 /* BallBink.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallBink.reality; sourceTree = "<group>"; };
-		B85217B52B6FFC7600709364 /* BallOrange.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallOrange.reality; sourceTree = "<group>"; };
-		B85217B62B6FFC7600709364 /* BallBlue.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallBlue.reality; sourceTree = "<group>"; };
-		B85217B72B6FFC7600709364 /* BallRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallRed.reality; sourceTree = "<group>"; };
-		B85217B82B6FFC7600709364 /* BallPurple.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BallPurple.reality; sourceTree = "<group>"; };
 		B85217B92B6FFC7600709364 /* Hole.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole.reality; sourceTree = "<group>"; };
 		B85217C42B7013DE00709364 /* MPConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPConnectionManager.swift; sourceTree = "<group>"; };
 		B85217C62B706FA200709364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B85217C82B71539A00709364 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		B85217CA2B7153BE00709364 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B85217CE2B72034600709364 /* BallOrange.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallOrange.reality; path = ../../BallOrange.reality; sourceTree = "<group>"; };
+		B85217CF2B72034600709364 /* BallRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallRed.reality; path = ../../BallRed.reality; sourceTree = "<group>"; };
+		B85217D02B72034600709364 /* BallPurple.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallPurple.reality; path = ../../BallPurple.reality; sourceTree = "<group>"; };
+		B85217D12B72034600709364 /* BallBink.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallBink.reality; path = ../../BallBink.reality; sourceTree = "<group>"; };
+		B85217D22B72034600709364 /* BallGreen.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallGreen.reality; path = ../../BallGreen.reality; sourceTree = "<group>"; };
+		B85217D32B72034600709364 /* BlueBall.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlueBall.reality; sourceTree = "<group>"; };
+		B85217D42B72034600709364 /* BallYellow.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = BallYellow.reality; path = ../../BallYellow.reality; sourceTree = "<group>"; };
 		B87B89392B66C3E00031E9D9 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		B87B893B2B66CAB70031E9D9 /* Hole1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hole1.reality; sourceTree = "<group>"; };
 		B87B893D2B66D6AE0031E9D9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -99,7 +103,7 @@
 		B89BD0402B6E646E004B25D0 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		B89BD0412B6E646E004B25D0 /* tick3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick3.mp3; sourceTree = "<group>"; };
 		B89BD0422B6E646E004B25D0 /* CountdownViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
-		B89BD0432B6E646E004B25D0 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		B89BD0432B6E646E004B25D0 /* MultipeerSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerSession.swift; sourceTree = "<group>"; };
 		B8A8BA4D2B65A53D00633A08 /* Leaderboared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboared.swift; sourceTree = "<group>"; };
 		B8A8BA502B664B3000633A08 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		B8A8BA522B664B4800633A08 /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
@@ -136,8 +140,18 @@
 			isa = PBXGroup;
 			children = (
 				B85217C42B7013DE00709364 /* MPConnectionManager.swift */,
+				B89BD0432B6E646E004B25D0 /* MultipeerSession.swift */,
 			);
 			path = MultiPeerConnectivity;
+			sourceTree = "<group>";
+		};
+		B85217C72B71536100709364 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B85217C82B71539A00709364 /* CameraView.swift */,
+				B85217CA2B7153BE00709364 /* CameraViewController.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		B87B894D2B68D3020031E9D9 /* The Game */ = {
@@ -210,7 +224,6 @@
 				B89BD03E2B6E646E004B25D0 /* playersView.swift */,
 				B89BD03B2B6E646E004B25D0 /* profileView.swift */,
 				5AFB8B5F2B67892C0099B033 /* SplashScreen.swift */,
-				B89BD0432B6E646E004B25D0 /* SwiftUIView.swift */,
 				B87B894D2B68D3020031E9D9 /* The Game */,
 				B89BD03F2B6E646E004B25D0 /* Timer */,
 			);
@@ -247,18 +260,16 @@
 		B8BFBDA62B62448D00161CF6 /* Pit-a-Pat */ = {
 			isa = PBXGroup;
 			children = (
+				B85217D12B72034600709364 /* BallBink.reality */,
+				B85217D22B72034600709364 /* BallGreen.reality */,
+				B85217CE2B72034600709364 /* BallOrange.reality */,
+				B85217D02B72034600709364 /* BallPurple.reality */,
+				B85217CF2B72034600709364 /* BallRed.reality */,
+				B85217D42B72034600709364 /* BallYellow.reality */,
+				B85217D32B72034600709364 /* BlueBall.reality */,
 				B85217C62B706FA200709364 /* Info.plist */,
-				B85217C32B7013B500709364 /* MultiPeerConnectivity */,
-				B85217B42B6FFC7600709364 /* BallBink.reality */,
-				B85217B62B6FFC7600709364 /* BallBlue.reality */,
-				B85217B22B6FFC7600709364 /* BallGreen.reality */,
-				B85217B52B6FFC7600709364 /* BallOrange.reality */,
-				B85217B82B6FFC7600709364 /* BallPurple.reality */,
-				B85217B72B6FFC7600709364 /* BallRed.reality */,
-				B85217B12B6FFC7600709364 /* BallYellow.reality */,
 				B85217B92B6FFC7600709364 /* Hole.reality */,
 				B85217B32B6FFC7600709364 /* Pat.reality */,
-				B85217AB2B6FD58500709364 /* Database */,
 				B89BD02F2B6E6398004B25D0 /* Pit-a-Pat.entitlements */,
 				B81CFF9A2B6A232A00EFFEF6 /* Ball0.reality */,
 				B81CFF942B6A201000EFFEF6 /* Ball1.reality */,
@@ -268,7 +279,10 @@
 				B8BFBDA72B62448D00161CF6 /* AppDelegate.swift */,
 				B8BFBDAB2B62448E00161CF6 /* Assets.xcassets */,
 				B8A8BA4F2B664B1B00633A08 /* AR */,
+				B85217C72B71536100709364 /* Camera */,
+				B85217AB2B6FD58500709364 /* Database */,
 				B89BD0282B6E637B004B25D0 /* models */,
+				B85217C32B7013B500709364 /* MultiPeerConnectivity */,
 				B8BFBDAD2B62448E00161CF6 /* Preview Content */,
 				B89BD0332B6E643D004B25D0 /* Servcies  */,
 				B89BD0362B6E6447004B25D0 /* viewModel */,
@@ -350,22 +364,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B81CFF972B6A201000EFFEF6 /* Ball1.reality in Resources */,
-				B85217BA2B6FFC7600709364 /* BallYellow.reality in Resources */,
+				B85217DB2B72034600709364 /* BallYellow.reality in Resources */,
+				B85217D72B72034600709364 /* BallPurple.reality in Resources */,
 				B87B893C2B66CAB70031E9D9 /* Hole1.reality in Resources */,
-				B85217BB2B6FFC7600709364 /* BallGreen.reality in Resources */,
+				B85217D82B72034600709364 /* BallBink.reality in Resources */,
 				B8BFBDAF2B62448E00161CF6 /* Preview Assets.xcassets in Resources */,
+				B85217D52B72034600709364 /* BallOrange.reality in Resources */,
+				B85217DA2B72034600709364 /* BlueBall.reality in Resources */,
 				B8BFBDAC2B62448E00161CF6 /* Assets.xcassets in Resources */,
 				B81CFF992B6A201000EFFEF6 /* Ball2.reality in Resources */,
-				B85217BE2B6FFC7600709364 /* BallOrange.reality in Resources */,
-				B85217BD2B6FFC7600709364 /* BallBink.reality in Resources */,
-				B85217C02B6FFC7600709364 /* BallRed.reality in Resources */,
 				B81CFF9B2B6A232A00EFFEF6 /* Ball0.reality in Resources */,
 				B85217BC2B6FFC7600709364 /* Pat.reality in Resources */,
 				B81CFF982B6A201000EFFEF6 /* Ball3.reality in Resources */,
-				B85217C12B6FFC7600709364 /* BallPurple.reality in Resources */,
 				B89BD0492B6E646E004B25D0 /* tick3.mp3 in Resources */,
 				B85217C22B6FFC7600709364 /* Hole.reality in Resources */,
-				B85217BF2B6FFC7600709364 /* BallBlue.reality in Resources */,
+				B85217D62B72034600709364 /* BallRed.reality in Resources */,
+				B85217D92B72034600709364 /* BallGreen.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,10 +401,12 @@
 				B85217C52B7013DE00709364 /* MPConnectionManager.swift in Sources */,
 				B8B970472B6A9F4A00990074 /* SharedARView.swift in Sources */,
 				B8A8BA532B664B4800633A08 /* ARViewRepresentable.swift in Sources */,
+				B85217CB2B7153BE00709364 /* CameraViewController.swift in Sources */,
 				5AFB8B602B67892C0099B033 /* SplashScreen.swift in Sources */,
 				B87B894C2B68D2E00031E9D9 /* JoinAGame.swift in Sources */,
 				B89BD02C2B6E637B004B25D0 /* profile.swift in Sources */,
 				B87B894A2B68D29B0031E9D9 /* HostAGame.swift in Sources */,
+				B85217C92B71539A00709364 /* CameraView.swift in Sources */,
 				B89BD02E2B6E637B004B25D0 /* players.swift in Sources */,
 				B87B89462B67B30D0031E9D9 /* ConnectWithSomeone.swift in Sources */,
 				B8BFBDA82B62448D00161CF6 /* AppDelegate.swift in Sources */,
@@ -404,7 +420,7 @@
 				B89BD0392B6E6447004B25D0 /* playersViewModel.swift in Sources */,
 				B89BD04A2B6E646E004B25D0 /* CountdownViewModel.swift in Sources */,
 				B89BD0462B6E646E004B25D0 /* AddFriendsView.swift in Sources */,
-				B89BD04B2B6E646E004B25D0 /* SwiftUIView.swift in Sources */,
+				B89BD04B2B6E646E004B25D0 /* MultipeerSession.swift in Sources */,
 				B87B89482B6842470031E9D9 /* container.swift in Sources */,
 				B8B970432B6A510B00990074 /* InstructionView.swift in Sources */,
 			);

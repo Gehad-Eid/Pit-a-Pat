@@ -8,7 +8,8 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                ARViewRepresentable(blurred: true)
+                CameraView()
+//                Rectangle()
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
@@ -18,7 +19,7 @@ struct MainView: View {
                         .frame(width: 250, height: 250)
                         .clipped()
                     
-                    NavigationLink(destination: HostAGame()) {
+                    NavigationLink(destination: InstructionView()) {
                         Rectangle()
                             .foregroundColor(Color("Color1"))
                             .cornerRadius(12)

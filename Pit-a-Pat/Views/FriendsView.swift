@@ -10,7 +10,7 @@ import SwiftUI
 struct FriendsView: View {
     var body: some View {
        
-            ARViewRepresentable(blurred: true)
+            CameraView()
                 .edgesIgnoringSafeArea(.all)
 
             Image("Subtract")

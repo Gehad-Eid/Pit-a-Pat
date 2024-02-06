@@ -8,7 +8,8 @@ struct PlayersView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                ARViewRepresentable(blurred: true)
+//                ARViewRepresentable(blurred: true)
+                CameraView()
                     .edgesIgnoringSafeArea(.all)
 
                 Image("Subtract")

@@ -14,7 +14,8 @@ struct ProfileView: View {
         NavigationStack{
             ZStack {
                 //                ARViewRepresentable(blurred: true)
-                Rectangle()
+//                Rectangle()
+                CameraView()
                     .edgesIgnoringSafeArea(.all)
                 
                 Image("Subtract")

@@ -34,6 +34,7 @@ class CountdownViewModel: ObservableObject {
                 self.counter -= 1
             } else {
                 timer.invalidate()
+                ARManager.shared.ARStream.send(.throwBalls)
             }
         }
     }

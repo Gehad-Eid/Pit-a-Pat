@@ -21,9 +21,9 @@ struct InstructionView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ARViewRepresentable()
+            ARViewRepresentable(profileVM: profileVM)
                 .edgesIgnoringSafeArea(.all)
-                .background(Color.clear)
+//                .background(Color.clear)
             
             if showInstruction1 {
                 instructionView1(geometry: geometry)
@@ -39,7 +39,8 @@ struct InstructionView: View {
                     HStack{
                         ZStack{
                             Image("ball1")
-                            Text("0\n\(profileVM.Name)\n")
+//                            Text("\(profileVM.score)\n\(profileVM.Name)\n")
+                            Text("\(profileVM.score)\nYou\n")
                                 .font(.headline)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
@@ -53,13 +54,15 @@ struct InstructionView: View {
                                     remainingTime -= 1
                                 } else {
                                     timer.upstream.connect().cancel()
+                                    
                                 }
                             }
                         Spacer()
                         
                         ZStack{
                             Image("ball2")
-                            Text("0\n\(profileVM.Name)\n")
+//                            Text("\(profileVM.score)\n\(profileVM.peerName)\n")
+                            Text("\(profileVM.score)\nComponente\n")
                                 .font(.headline)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
@@ -102,7 +105,7 @@ struct InstructionView: View {
             )
             .foregroundColor(.black)
             .onTapGesture {
-                ARManager.shared.ARStream.send(.removeAll)
+//                ARManager.shared.ARStream.send(.removeAll)
                 showInstruction1 = false
                 showInstruction2 = true
             }
@@ -132,7 +135,7 @@ struct InstructionView: View {
     
     private func startButtonView(geometry: GeometryProxy) -> some View {
         Button(action: {
-            ARManager.shared.ARStream.send(.addHoles)
+//            ARManager.shared.ARStream.send(.addHoles)
             showStartButton = false
             showCounter = true
             countdownViewModel.startCountdown()

@@ -4,7 +4,7 @@
 import SwiftUI
 
 enum Actions{
-    case addHoles
+//    case addHoles
     case throwBalls //(difficulty: Int)
     case removeAll
     

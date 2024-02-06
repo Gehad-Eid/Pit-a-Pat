@@ -16,7 +16,7 @@ class CustomARView : ARView {
     var sessionIDObservation: NSKeyValueObservation?
     //    static let sharedAR = CustomARView()
     
-    var profileVM: ProfileViewModel // Assuming ProfileViewModel is already defined elsewhere
+    var profileVM: ProfileViewModel
     
     // Updated required initializer to include ProfileViewModel parameter
     required init(frame frameRect: CGRect, profileVM: ProfileViewModel) {
@@ -110,7 +110,10 @@ class CustomARView : ARView {
         collisionSubscriptions.append(self.scene.subscribe(to: CollisionEvents.Began.self, on: entity) {  /*[weak self]*/ event in
             
             self.count += 1
-            self.profileVM.score += 1
+            DispatchQueue.main.async {
+                self.profileVM.score += 1
+                // Optionally save or update the profile after changing the score.
+            }
 //            await self.profileVM.saveProfile()
             //Place code here for when the collision begins.
             print(event.entityA.name, "collided with", event.entityB.name)
@@ -143,7 +146,7 @@ class CustomARView : ARView {
     
     
     // Array of entity names
-    let entityNames = ["BallYellow", "BallRed", "BallPurple", "BallOrange", "BallGreen", "BallBlue", "BallBink"]
+    let entityNames = ["BallYellow", "BallRed", "BallPurple", "BallOrange", "BallGreen", "BlueBall", "BallBink"]
     
     // BallEntity property
     var BallEntity = try? Entity.load(named: "BallYellow")
@@ -217,8 +220,8 @@ class CustomARView : ARView {
             .ARStream
             .sink { [weak self] action in
                 switch action {
-                case .addHoles: //.addHoles(let difficulty):
-                    self?.addHoles()
+//                case .addHoles: //.addHoles(let difficulty):
+//                    self?.addHoles()
                     
                 case .throwBalls:
                     self?.throwBalls()
@@ -230,17 +233,17 @@ class CustomARView : ARView {
             .store(in: &cancellables)
     }
     
-    func addHoles() {
-        let hole = try? Entity.load(named: "Hole")
-        hole?.name = "Hole"
-        
-        let anchor = AnchorEntity(plane: .horizontal)
-//        let ancho = ARAnchor(name: "Hole", transform: T##simd_float4x4)
-        
-        anchor.addChild(hole!)
-        
-        scene.addAnchor(anchor)
-    }
+//    func addHoles() {
+//        let hole = try? Entity.load(named: "Hole")
+//        hole?.name = "Hole"
+//        
+//        let anchor = AnchorEntity(plane: .horizontal)
+////        let ancho = ARAnchor(name: "Hole", transform: T##simd_float4x4)
+//        
+//        anchor.addChild(hole!)
+//        
+//        scene.addAnchor(anchor)
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
@@ -298,7 +301,7 @@ extension CustomARView : ARSessionDelegate{
         for anchor in anchors {
             if let anchorName = anchor.name, anchorName == "HoleAnchor" {
                 placeObject(named: "Hole", for: anchor)
-                print("triggerVolume has been found")
+                print("HoleAnchor has been found")
             }else{
                 print(anchor.name ?? "nil")
             }
@@ -371,6 +374,7 @@ extension CustomARView {
               A player wants to join the game.
               Hold the devices next to each other.
 """)
+        
         // Provide your session ID to the new user so they can keep track of your anchors.
         sendARSessionIDTo(peers: [peer])
     }

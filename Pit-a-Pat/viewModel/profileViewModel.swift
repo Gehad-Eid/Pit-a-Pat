@@ -14,11 +14,14 @@ import SwiftUI
 class ProfileViewModel: ObservableObject{
     var userRecord: CKRecord? = nil
     var userProfile: CKRecord? = nil
-    let container = CKContainer(identifier: "iCloud.Pit-a-Pat2")//Change it to your container id
+    let container = CKContainer(identifier: "iCloud.Pit-a-Pat2")
     
     @Published var Name: String = ""
     @Published var score: Int = 0
     @Published var level: Int = 1
+    
+//    @Published var peerName: String = ""
+
 //    @Published var selectedImage: PhotosPickerItem? = nil
     
     init() {
