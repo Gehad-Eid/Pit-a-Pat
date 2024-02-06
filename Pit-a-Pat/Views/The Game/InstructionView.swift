@@ -27,6 +27,7 @@ struct InstructionView: View {
 
 
     var body: some View {
+        NavigationView{
         GeometryReader { geometry in
                 ARViewRepresentable(/*overlayColorManager: overlayColorManager, */profileVM: profileVM)
                     .edgesIgnoringSafeArea(.all)
@@ -88,7 +89,8 @@ struct InstructionView: View {
             }
             
             
-        }             .navigationBarBackButtonHidden(true)
+        }             
+        .navigationBarBackButtonHidden(true)
         
         
         

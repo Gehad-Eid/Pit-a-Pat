@@ -25,23 +25,23 @@ struct MainView: View {
                             .cornerRadius(12)
                             .frame(width: 280, height: 44)
                             .overlay(
-                                Text("Host a game")
+                                Text("Play") 
                                     .foregroundColor(.white)
                                     .font(.headline)
                             )
                     }
                     
-                    NavigationLink(destination: JoinAGame()) {
-                        Rectangle()
-                            .foregroundColor(Color("Color1"))
-                            .cornerRadius(12)
-                            .frame(width: 280, height: 44)
-                            .overlay(
-                                Text("Join a game")
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                            )
-                    }
+//                    NavigationLink(destination: JoinAGame()) {
+//                        Rectangle()
+//                            .foregroundColor(Color("Color1"))
+//                            .cornerRadius(12)
+//                            .frame(width: 280, height: 44)
+//                            .overlay(
+//                                Text("Join a game")
+//                                    .foregroundColor(.white)
+//                                    .font(.headline)
+//                            )
+//                    }
                     
                     NavigationLink(destination: PlayersView(loggedInUsername: profileVM.Name)) {
                                      Rectangle()
